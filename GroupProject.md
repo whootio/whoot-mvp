@@ -21,27 +21,28 @@
 
 ### Product & Technical Specifications
 > * What operating system versions should support it? 
->IOS
+>*IOS
 > * What are your current services, servers, databases? 
->Firebase
+> * Firebase
 > * Do you have current API/services documentation? 
->Twitter, Facebook, Instragram
+> * Twitter, Facebook, Instragram
 > * Do you have current Apple, Google, or other developer accounts/credentials? 
->No
+> * No
 > * Are there other credentials that are needed or already exist (analytics systems, or platforms)?
+> * No
 
 ### Dependencies
 > Dependencies are any aspect that the product or product team relies on to meet objectives.
-> APIs (Twitter, Facebook, etc)
+> *APIs (Twitter, Facebook, etc)
 > * Service/API documentation
 > * Profile/account/platform credentials
 
 
 ### Milestones
-> Intergrate Twitter Feed
-> Intergrate Facebook Feed
->Intergrate Instagram Feed
->Combine into one feed
+> * Intergrate Twitter Feed
+> * Intergrate Facebook Feed
+> * Intergrate Instagram Feed
+> * Combine into one feed
 
 ### Wireframes 
 
