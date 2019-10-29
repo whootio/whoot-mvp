@@ -1,27 +1,37 @@
 # Product requirements document (PRD)
 
-> ## *Socalist*
-
-
+## Untitled Yik Yak clone
 
 ### What is Your App Vision Statement?
 > One feed that shows multiple social media accounts' feeds.
 
 
-### Create a List of Features
-> * Sign-up and login
-> * Splash screen
-> * Navigation
-> * Image galleries
-> * Social media integration
+### Features
+
+#### Basic Functionality
+* Sign-up and login
+* Splash screen
+* Navigation
+* Anonymous posting
+* Post interactions (like, dislike, favorite, etc.)
+* Local community posts
+
+#### Stretch Goals
+* Users can choose location radius
+* Optional username
+* Upload photos
+* User profile pictures
+* Comments
+* Topic rooms (like subreddits)
+
 
 ### What is Your Monetization Model?
 > There are several monetization strategies worth exploring. The strategy you choose will depend on the type of app you’re developing and your target user. Conventional monetization models include advertising, pay per download, in-app purchases, freemium, and subscriptions.
-> * Advertising or subscription
+* Advertising
 
 ### Product & Technical Specifications
-> * What operating system versions should support it? 
-> * IOS
+* What operating system versions should support it? 
+> * iOS
 > * What are your current services, servers, databases? 
 > * Firebase
 > * Do you have current API/services documentation? 
@@ -33,16 +43,13 @@
 
 ### Dependencies
 > Dependencies are any aspect that the product or product team relies on to meet objectives.
-> *APIs (Twitter, Facebook, etc)
-> * Service/API documentation
-> * Profile/account/platform credentials
-
+* Firebase
 
 ### Milestones
-> * Intergrate Twitter Feed
-> * Intergrate Facebook Feed
-> * Intergrate Instagram Feed
-> * Combine into one feed
+* Create anonymous profiles
+* Create and interact with posts
+* Limit the user to current location
+* Start implementing stretch goals
 
 ### Wireframes 
 
