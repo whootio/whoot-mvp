@@ -53,3 +53,11 @@
 
 ### Wireframes 
 
+#### Home Feed
+<img src="mockups/home-feed.jpg"/>
+
+#### Post Detail
+<img src="mockups/post-detail.jpg"/>
+
+#### Profile Page
+<img src="mockups/profile.jpg"/>
