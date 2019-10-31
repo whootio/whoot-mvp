@@ -1,0 +1,6 @@
+framework module Pods_whootTests {
+  umbrella header "Pods-whootTests-umbrella.h"
+
+  export *
+  module * { export * }
+}

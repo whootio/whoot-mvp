@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>887126788644-314ru221683cd0ergvc439p0fmpie8f0.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.887126788644-314ru221683cd0ergvc439p0fmpie8f0</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBvgMUEO4kDMueN96WTvgP4h081ZoFuQaY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>887126788644</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.caestrada.whoot</string>
+	<key>PROJECT_ID</key>
+	<string>yikyak-b8083</string>
+	<key>STORAGE_BUCKET</key>
+	<string>yikyak-b8083.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:887126788644:ios:6605706135fc1de7df66b1</string>
+	<key>DATABASE_URL</key>
+	<string>https://yikyak-b8083.firebaseio.com</string>
+</dict>
+</plist>
