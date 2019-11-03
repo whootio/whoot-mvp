@@ -1,9 +1,9 @@
 # Product requirements document (PRD)
 
-## Untitled Yik Yak clone
+## Whoot
 
 ### What is Your App Vision Statement?
-> One feed that shows multiple social media accounts' feeds.
+A fusion of Yik Yak and Reddit that anonymously connects users to their communities.
 
 
 ### Features
@@ -46,9 +46,10 @@
 * Firebase
 
 ### Milestones
-* Create anonymous profiles
+* Login with phone number
 * Create and interact with posts
 * Limit the user to current location
+* Create anonymous profiles
 * Start implementing stretch goals
 
 ### Wireframes 
