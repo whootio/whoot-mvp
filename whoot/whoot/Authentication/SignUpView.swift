@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseDatabase
 
 class SignUpView: UIViewController {
     
@@ -23,20 +24,34 @@ class SignUpView: UIViewController {
         guard let password = passwordField.text else { return }
         guard let email = emailField.text else  { return }
         
-        Auth.auth().createUser(withEmail: email, password: password) { user, error in
-            if error != nil {
+        Auth.auth().createUser(withEmail: email, password: password) { result, error in
+            if let error = error {
                 
                 // Something went wrong and we were not able to create the user's account
                 
                 let alert = UIAlertController(title: "Sign Up Error",
-                      message: error?.localizedDescription, preferredStyle: .alert)
+                      message: error.localizedDescription, preferredStyle: .alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
                 self.present(alert, animated: true)
                 
             } else {
                 
-                // Successfully created and signed the user in
+                // Add user to database
+                
+                guard let uid = result?.user.uid else { return }
+                
+                let values = ["email": email]
+                
+                Database.database().reference().child("users").child(uid).updateChildValues(values, withCompletionBlock: { (error, ref) in
+                    if let error = error {
+                        print("failed to update database values \(error.localizedDescription)")
+                        return
+                    }
+                })
+                
+                // Successfully created the user
                 print("user create success")
+                
                 self.performSegue(withIdentifier: "createAccountSegue", sender: nil)
                 
             }

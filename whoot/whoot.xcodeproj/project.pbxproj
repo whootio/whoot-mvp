@@ -11,13 +11,13 @@
 		07054E3D236D16D800C988CB /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07054E3C236D16D800C988CB /* SignUpView.swift */; };
 		07964C67236A726300C5A3AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07964C66236A726300C5A3AC /* AppDelegate.swift */; };
 		07964C69236A726300C5A3AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07964C68236A726300C5A3AC /* SceneDelegate.swift */; };
-		07964C6B236A726300C5A3AC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07964C6A236A726300C5A3AC /* ViewController.swift */; };
 		07964C6E236A726300C5A3AC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07964C6C236A726300C5A3AC /* Main.storyboard */; };
 		07964C70236A726600C5A3AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07964C6F236A726600C5A3AC /* Assets.xcassets */; };
 		07964C73236A726600C5A3AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07964C71236A726600C5A3AC /* LaunchScreen.storyboard */; };
 		07964C7E236A726600C5A3AC /* whootTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07964C7D236A726600C5A3AC /* whootTests.swift */; };
 		07964C89236A726600C5A3AC /* whootUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07964C88236A726600C5A3AC /* whootUITests.swift */; };
 		07B536EA236A77EB00F70C8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07B536E9236A77EB00F70C8F /* GoogleService-Info.plist */; };
+		07D8DDC9236F63E80099E7F8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D8DDC8236F63E80099E7F8 /* HomeViewController.swift */; };
 		0A60A18A0DCEF639985C4487 /* Pods_whootUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89A95B4053003D19B95FB8AB /* Pods_whootUITests.framework */; };
 		7E6CA89C69FD1A34A9F37E05 /* Pods_whootTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64EF0292CB10F38594313F7D /* Pods_whootTests.framework */; };
 		B09AE349897E4EA81703872E /* Pods_whoot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E9F70B353B1548E0F50E03B /* Pods_whoot.framework */; };
@@ -46,7 +46,6 @@
 		07964C63236A726300C5A3AC /* Whoot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whoot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07964C66236A726300C5A3AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07964C68236A726300C5A3AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		07964C6A236A726300C5A3AC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		07964C6D236A726300C5A3AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		07964C6F236A726600C5A3AC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07964C72236A726600C5A3AC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -58,6 +57,7 @@
 		07964C88236A726600C5A3AC /* whootUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = whootUITests.swift; sourceTree = "<group>"; };
 		07964C8A236A726600C5A3AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07B536E9236A77EB00F70C8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		07D8DDC8236F63E80099E7F8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1E9F70B353B1548E0F50E03B /* Pods_whoot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_whoot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		309AC7571184B0A16AA9BD22 /* Pods-whoot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whoot.debug.xcconfig"; path = "Target Support Files/Pods-whoot/Pods-whoot.debug.xcconfig"; sourceTree = "<group>"; };
 		3C8B11D6BBF7664D0EAC52F8 /* Pods-whootUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whootUITests.release.xcconfig"; path = "Target Support Files/Pods-whootUITests/Pods-whootUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -132,9 +132,9 @@
 			isa = PBXGroup;
 			children = (
 				07054E39236D169C00C988CB /* Authentication */,
+				07D8DDBD236EA81C0099E7F8 /* HomeView */,
 				07964C66236A726300C5A3AC /* AppDelegate.swift */,
 				07964C68236A726300C5A3AC /* SceneDelegate.swift */,
-				07964C6A236A726300C5A3AC /* ViewController.swift */,
 				07964C6C236A726300C5A3AC /* Main.storyboard */,
 				07964C6F236A726600C5A3AC /* Assets.xcassets */,
 				07964C71236A726600C5A3AC /* LaunchScreen.storyboard */,
@@ -160,6 +160,14 @@
 				07964C8A236A726600C5A3AC /* Info.plist */,
 			);
 			path = whootUITests;
+			sourceTree = "<group>";
+		};
+		07D8DDBD236EA81C0099E7F8 /* HomeView */ = {
+			isa = PBXGroup;
+			children = (
+				07D8DDC8236F63E80099E7F8 /* HomeViewController.swift */,
+			);
+			path = HomeView;
 			sourceTree = "<group>";
 		};
 		07E44EE63763F5025233C155 /* Pods */ = {
@@ -407,7 +415,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07964C6B236A726300C5A3AC /* ViewController.swift in Sources */,
+				07D8DDC9236F63E80099E7F8 /* HomeViewController.swift in Sources */,
 				07964C67236A726300C5A3AC /* AppDelegate.swift in Sources */,
 				07964C69236A726300C5A3AC /* SceneDelegate.swift in Sources */,
 				07054E3B236D16CC00C988CB /* SignInView.swift in Sources */,
