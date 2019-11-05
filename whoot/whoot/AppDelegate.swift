@@ -1,6 +1,6 @@
 //
 //  AppDelegate.swift
-//  yikyak-clone
+//  whoot
 //
 //  Created by Carlos Estrada on 10/30/19.
 //  Copyright © 2019 Carlos Estrada. All rights reserved.
@@ -12,11 +12,12 @@ import Firebase
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
-
+    var window: UIWindow?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
         return true
     }
 
@@ -36,4 +37,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
 }
-
