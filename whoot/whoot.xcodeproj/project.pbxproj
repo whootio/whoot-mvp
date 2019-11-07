@@ -16,6 +16,7 @@
 		07964C73236A726600C5A3AC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07964C71236A726600C5A3AC /* LaunchScreen.storyboard */; };
 		07964C7E236A726600C5A3AC /* whootTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07964C7D236A726600C5A3AC /* whootTests.swift */; };
 		07964C89236A726600C5A3AC /* whootUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07964C88236A726600C5A3AC /* whootUITests.swift */; };
+		079981F72371FB4C006DE754 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079981F62371FB4C006DE754 /* DBHelper.swift */; };
 		07B536EA236A77EB00F70C8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07B536E9236A77EB00F70C8F /* GoogleService-Info.plist */; };
 		07D8DDC9236F63E80099E7F8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D8DDC8236F63E80099E7F8 /* HomeViewController.swift */; };
 		0A60A18A0DCEF639985C4487 /* Pods_whootUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89A95B4053003D19B95FB8AB /* Pods_whootUITests.framework */; };
@@ -58,6 +59,7 @@
 		07964C84236A726600C5A3AC /* whootUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = whootUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07964C88236A726600C5A3AC /* whootUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = whootUITests.swift; sourceTree = "<group>"; };
 		07964C8A236A726600C5A3AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		079981F62371FB4C006DE754 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
 		07B536E9236A77EB00F70C8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		07D8DDC8236F63E80099E7F8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		1E9F70B353B1548E0F50E03B /* Pods_whoot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_whoot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -135,6 +137,7 @@
 		07964C65236A726300C5A3AC /* whoot */ = {
 			isa = PBXGroup;
 			children = (
+				079981F52371FB14006DE754 /* Database */,
 				A9CB025F23712333001F2AC6 /* User.swift */,
 				A9CB025D2371231D001F2AC6 /* Post.swift */,
 				07054E39236D169C00C988CB /* Authentication */,
@@ -166,6 +169,14 @@
 				07964C8A236A726600C5A3AC /* Info.plist */,
 			);
 			path = whootUITests;
+			sourceTree = "<group>";
+		};
+		079981F52371FB14006DE754 /* Database */ = {
+			isa = PBXGroup;
+			children = (
+				079981F62371FB4C006DE754 /* DBHelper.swift */,
+			);
+			path = Database;
 			sourceTree = "<group>";
 		};
 		07D8DDBD236EA81C0099E7F8 /* HomeView */ = {
@@ -427,6 +438,7 @@
 				A9CB025E2371231E001F2AC6 /* Post.swift in Sources */,
 				07054E3B236D16CC00C988CB /* SignInView.swift in Sources */,
 				07054E3D236D16D800C988CB /* SignUpView.swift in Sources */,
+				079981F72371FB4C006DE754 /* DBHelper.swift in Sources */,
 				A9CB026023712333001F2AC6 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

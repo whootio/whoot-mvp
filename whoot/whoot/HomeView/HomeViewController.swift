@@ -17,6 +17,27 @@ class HomeViewController: UITableViewController {
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
+        
+        // From Carlos: Uncomment the following to test a sample post to the database
+        // If successful, you will get an alert saying the post was successful when you launch the app
+//
+//        let testDict : [AnyHashable : Any] = [
+//            "body": "hello world!"
+//        ]
+//
+//        DBHelper.createPost(postDictionary: testDict) { (error, ref) in
+//            if error != nil {
+//                let alert = UIAlertController(title: "Error posting",
+//                      message: String(describing: error?.localizedDescription), preferredStyle: .alert)
+//                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//                self.present(alert, animated: true)
+//            } else {
+//                let alert = UIAlertController(title: "Success!",
+//                      message: "Successfully posted", preferredStyle: .alert)
+//                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+//                self.present(alert, animated: true)
+//            }
+//        }
     }
     
     // MARK: - Sign Out
