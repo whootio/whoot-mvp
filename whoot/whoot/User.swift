@@ -11,6 +11,23 @@ import Foundation
 class User{
     var UID: String = ""
     var upVotes: Int = 0
-    var downVotes = 0
-    var Posts: [Int] = [] 
+    var downVotes: Int = 0
+    var Posts = [userPost]()
+    
+    func getUID() -> String{
+        return self.UID
+    }
+    
+    func getupVotes() -> Int{
+        return self.upVotes
+    }
+    
+    func getdownVotes() -> Int{
+        return self.downVotes
+    }
+    
+    func addPost(p:userPost){
+        self.Posts.append(p)
+    }
+
 }
