@@ -21,6 +21,8 @@
 		07D8DDC9236F63E80099E7F8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D8DDC8236F63E80099E7F8 /* HomeViewController.swift */; };
 		0A60A18A0DCEF639985C4487 /* Pods_whootUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89A95B4053003D19B95FB8AB /* Pods_whootUITests.framework */; };
 		7E6CA89C69FD1A34A9F37E05 /* Pods_whootTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64EF0292CB10F38594313F7D /* Pods_whootTests.framework */; };
+		A9CB025E2371231E001F2AC6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB025D2371231D001F2AC6 /* Post.swift */; };
+		A9CB026023712333001F2AC6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB025F23712333001F2AC6 /* User.swift */; };
 		B09AE349897E4EA81703872E /* Pods_whoot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E9F70B353B1548E0F50E03B /* Pods_whoot.framework */; };
 /* End PBXBuildFile section */
 
@@ -67,6 +69,8 @@
 		53E82D95237E75FD877782CF /* Pods-whootTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whootTests.debug.xcconfig"; path = "Target Support Files/Pods-whootTests/Pods-whootTests.debug.xcconfig"; sourceTree = "<group>"; };
 		64EF0292CB10F38594313F7D /* Pods_whootTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_whootTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		89A95B4053003D19B95FB8AB /* Pods_whootUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_whootUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A9CB025D2371231D001F2AC6 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
+		A9CB025F23712333001F2AC6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C8B13EB4DE6195E620BD51A0 /* Pods-whootUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whootUITests.debug.xcconfig"; path = "Target Support Files/Pods-whootUITests/Pods-whootUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ECCC6F4474E7A0B8E80DB54D /* Pods-whoot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whoot.release.xcconfig"; path = "Target Support Files/Pods-whoot/Pods-whoot.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -134,6 +138,8 @@
 			isa = PBXGroup;
 			children = (
 				079981F52371FB14006DE754 /* Database */,
+				A9CB025F23712333001F2AC6 /* User.swift */,
+				A9CB025D2371231D001F2AC6 /* Post.swift */,
 				07054E39236D169C00C988CB /* Authentication */,
 				07D8DDBD236EA81C0099E7F8 /* HomeView */,
 				07964C66236A726300C5A3AC /* AppDelegate.swift */,
@@ -429,9 +435,11 @@
 				07D8DDC9236F63E80099E7F8 /* HomeViewController.swift in Sources */,
 				07964C67236A726300C5A3AC /* AppDelegate.swift in Sources */,
 				07964C69236A726300C5A3AC /* SceneDelegate.swift in Sources */,
+				A9CB025E2371231E001F2AC6 /* Post.swift in Sources */,
 				07054E3B236D16CC00C988CB /* SignInView.swift in Sources */,
 				07054E3D236D16D800C988CB /* SignUpView.swift in Sources */,
 				079981F72371FB4C006DE754 /* DBHelper.swift in Sources */,
+				A9CB026023712333001F2AC6 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
