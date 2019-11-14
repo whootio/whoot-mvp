@@ -10,34 +10,22 @@ import UIKit
 import Firebase
 
 class HomeViewController: UITableViewController {
+    
+    var posts = [userPost]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.tableView.refreshControl = UIRefreshControl()
+        self.tableView.refreshControl?.addTarget(self, action: #selector(getPosts), for: .valueChanged)
+        self.tableView.rowHeight = UITableView.automaticDimension
+        self.tableView.estimatedRowHeight = 200
+        
         checkIfUserSignedIn()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
-        // From Carlos: Uncomment the following to test a sample post to the database
-        // If successful, you will get an alert saying the post was successful when you launch the app
-//
-//        let testDict : [AnyHashable : Any] = [
-//            "body": "hello world!"
-//        ]
-//
-//        DBHelper.createPost(postDictionary: testDict) { (error, ref) in
-//            if error != nil {
-//                let alert = UIAlertController(title: "Error posting",
-//                      message: String(describing: error?.localizedDescription), preferredStyle: .alert)
-//                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//                self.present(alert, animated: true)
-//            } else {
-//                let alert = UIAlertController(title: "Success!",
-//                      message: "Successfully posted", preferredStyle: .alert)
-//                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-//                self.present(alert, animated: true)
-//            }
-//        }
+        getPosts()
     }
     
     // MARK: - Sign Out
@@ -73,28 +61,45 @@ class HomeViewController: UITableViewController {
 
         }
     }
+    
+    @objc func getPosts() {
+        getAllPosts()
+    }
+    
+    func getAllPosts() {
+        DBHelper.getAllPosts { (userPosts, error) in
+            if error != nil {
+                return
+            }
+            self.posts = userPosts
+            self.tableView.reloadData()
+            self.tableView.refreshControl?.endRefreshing()
+        }
+    }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return posts.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell : PostTableViewCell = tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell", for: indexPath) as! PostTableViewCell
+        
+        let post = posts[indexPath.row]
 
         // Configure the cell...
+        cell.bodyText.text = post.getPostText()
+        cell.timestamp.text = post.getTimestamp()
+        cell.upvoteCount.text = "\(post.getPoints())"
 
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
