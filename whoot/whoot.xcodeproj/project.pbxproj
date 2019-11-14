@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		07054E3B236D16CC00C988CB /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07054E3A236D16CC00C988CB /* SignInView.swift */; };
 		07054E3D236D16D800C988CB /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07054E3C236D16D800C988CB /* SignUpView.swift */; };
+		074DA8E8237CBF32004E1FD7 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074DA8E7237CBF32004E1FD7 /* NewPostViewController.swift */; };
+		074DA8EA237CD04A004E1FD7 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074DA8E9237CD04A004E1FD7 /* PostTableViewCell.swift */; };
 		07964C67236A726300C5A3AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07964C66236A726300C5A3AC /* AppDelegate.swift */; };
 		07964C69236A726300C5A3AC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07964C68236A726300C5A3AC /* SceneDelegate.swift */; };
 		07964C70236A726600C5A3AC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07964C6F236A726600C5A3AC /* Assets.xcassets */; };
@@ -50,6 +52,8 @@
 /* Begin PBXFileReference section */
 		07054E3A236D16CC00C988CB /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		07054E3C236D16D800C988CB /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		074DA8E7237CBF32004E1FD7 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
+		074DA8E9237CD04A004E1FD7 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		07964C63236A726300C5A3AC /* Whoot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whoot.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07964C66236A726300C5A3AC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07964C68236A726300C5A3AC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -190,6 +194,8 @@
 			isa = PBXGroup;
 			children = (
 				07D8DDC8236F63E80099E7F8 /* HomeViewController.swift */,
+				074DA8E7237CBF32004E1FD7 /* NewPostViewController.swift */,
+				074DA8E9237CD04A004E1FD7 /* PostTableViewCell.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -461,7 +467,9 @@
 				07964C69236A726300C5A3AC /* SceneDelegate.swift in Sources */,
 				A9CB025E2371231E001F2AC6 /* Post.swift in Sources */,
 				07054E3B236D16CC00C988CB /* SignInView.swift in Sources */,
+				074DA8E8237CBF32004E1FD7 /* NewPostViewController.swift in Sources */,
 				07054E3D236D16D800C988CB /* SignUpView.swift in Sources */,
+				074DA8EA237CD04A004E1FD7 /* PostTableViewCell.swift in Sources */,
 				079981F72371FB4C006DE754 /* DBHelper.swift in Sources */,
 				A9CB026023712333001F2AC6 /* User.swift in Sources */,
 			);
