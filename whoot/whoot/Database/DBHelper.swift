@@ -71,25 +71,19 @@ struct DBHelper {
     
     // MARK: Post Operations
     
-    static func createPost(postDictionary: [AnyHashable : Any], completion: @escaping (Error?, DatabaseReference?) -> ()) {
-        // We assume that we are being provided a dictionary with all the attributes of a Post object
-        // We also assume that a user is signed in
-        
-        // Create mutable (modifiable) dictionary
-        var postDict = postDictionary
+    static func createPost(post: userPost, completion: @escaping (Error?, DatabaseReference?) -> ()) {
+        // We can assume that a user is already signed in
         
         // initialize the post information
-        
-        postDict["created_at"] = getTimestampAsString()
-        postDict["downvotes"] = 0
-        postDict["upvotes"] = 0
+        post.setTimestamp()
         
         // Grab the current user's information for associating it with the post
         if let user = Auth.auth().currentUser {
-            postDict["user"] = [
-                "uid": user.uid
-            ]
+            post.setUID(uid: user.uid)
         }
+        
+        // Create mutable (modifiable) dictionary
+        let postDict = post.toDictionary()
         
         // Generate a UID for the post and insert it into the database
         let post = posts.childByAutoId()
@@ -99,6 +93,7 @@ struct DBHelper {
                 completion(error, ref)
             }
             else {
+                print("Create Post Success.")
                 completion(nil, ref)
             }
         }
@@ -108,6 +103,23 @@ struct DBHelper {
         // Query for posts using the user's UID
         // We assume that the Post object will have a fromDictionary() method that deserializes its data
         // Return an array of Post objects associated with the provided UID
+    }
+    
+    static func getAllPosts(completion: @escaping ([userPost], Error?) -> ()) {
+        var postArray = [userPost]()
+        
+        posts.observeSingleEvent(of: .value, with: { (snapshot) in
+            for child in snapshot.children {
+                if let childSnapshot = child as? DataSnapshot,
+                let data = childSnapshot.value as? [AnyHashable : Any] {
+                    let post = userPost(dictionary: data)
+                    postArray.insert(post, at: 0)
+                }
+            }
+            completion(postArray, nil)
+        }) { (error) in
+            completion(postArray, error)
+        }
     }
     
     func getPostsByLocation(location: CLLocationCoordinate2D, radiusInMiles: Int) {
