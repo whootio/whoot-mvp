@@ -15,9 +15,12 @@ class SignInView: UIViewController {
     
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
+    @IBOutlet weak var signInButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        signInButton.layer.cornerRadius = 5
+        signInButton.clipsToBounds = true
     }
     
     @IBAction func SignIn(_ sender: Any) {

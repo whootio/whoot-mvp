@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZBo-Px-xZG">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15509"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -16,51 +17,81 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A2Y-J4-EI0">
-                                <rect key="frame" x="50" y="391" width="314" height="34"/>
+                                <rect key="frame" x="30" y="391" width="354" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
+                                <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" enablesReturnKeyAutomatically="YES" textContentType="email"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="keyPath" value="YES"/>
+                                </userDefinedRuntimeAttributes>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xjF-Pz-NVi">
-                                <rect key="frame" x="50" y="445" width="314" height="34"/>
+                                <rect key="frame" x="30" y="445" width="354" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="password"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="done" enablesReturnKeyAutomatically="YES" secureTextEntry="YES" textContentType="password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLe-er-zQk">
-                                <rect key="frame" x="50" y="499" width="314" height="30"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="30" y="499" width="354" height="40"/>
+                                <color key="backgroundColor" name="whoot-button"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="sOb-kX-Z6b"/>
+                                </constraints>
                                 <state key="normal" title="Sign In">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" name="whoot-bg"/>
                                 </state>
                                 <connections>
                                     <action selector="SignIn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="aHP-pT-knu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMS-f9-MJV">
-                                <rect key="frame" x="50" y="549" width="314" height="30"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <state key="normal" title="Create an Account">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="a1S-T1-r0r" kind="show" id="Rfx-1Q-MaZ"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="14J-O6-d5X" userLabel="Sign Up">
+                                <rect key="frame" x="87" y="802" width="240.5" height="30"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66W-mP-nEk">
+                                        <rect key="frame" x="0.0" y="5" width="183.5" height="20.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hMS-f9-MJV">
+                                        <rect key="frame" x="183.5" y="0.0" width="57" height="30"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                        <state key="normal" title="Sign Up">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="a1S-T1-r0r" kind="show" id="Rfx-1Q-MaZ"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whoot-white" translatesAutoresizingMaskIntoConstraints="NO" id="ea2-a0-X07">
+                                <rect key="frame" x="127" y="181" width="160" height="160"/>
+                                <color key="tintColor" name="whoot-logo"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="160" id="QNA-Kg-KlD"/>
+                                    <constraint firstAttribute="height" constant="160" id="lU3-jw-lmJ"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="whoot-bg"/>
                         <constraints>
                             <constraint firstItem="A2Y-J4-EI0" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" constant="-40" id="0Oh-VD-W9N"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A2Y-J4-EI0" secondAttribute="trailing" constant="50" id="KHN-9s-gEs"/>
+                            <constraint firstItem="14J-O6-d5X" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="0yz-2O-p0U"/>
+                            <constraint firstItem="ea2-a0-X07" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fqh-G0-xg5"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="A2Y-J4-EI0" secondAttribute="trailing" constant="30" id="KHN-9s-gEs"/>
                             <constraint firstItem="A2Y-J4-EI0" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="M5Q-RX-3Iw"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="hMS-f9-MJV" secondAttribute="trailing" constant="50" id="Mu9-w4-TdE"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xjF-Pz-NVi" secondAttribute="trailing" constant="50" id="S70-sN-eP7"/>
-                            <constraint firstItem="bLe-er-zQk" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="XqW-a6-i49"/>
-                            <constraint firstItem="xjF-Pz-NVi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="bfR-KV-jfh"/>
-                            <constraint firstItem="hMS-f9-MJV" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="cCt-qN-elD"/>
+                            <constraint firstItem="A2Y-J4-EI0" firstAttribute="trailing" secondItem="xjF-Pz-NVi" secondAttribute="trailing" id="S70-sN-eP7"/>
+                            <constraint firstItem="bLe-er-zQk" firstAttribute="leading" secondItem="xjF-Pz-NVi" secondAttribute="leading" id="XqW-a6-i49"/>
+                            <constraint firstItem="xjF-Pz-NVi" firstAttribute="leading" secondItem="A2Y-J4-EI0" secondAttribute="leading" id="bfR-KV-jfh"/>
                             <constraint firstItem="bLe-er-zQk" firstAttribute="top" secondItem="xjF-Pz-NVi" secondAttribute="bottom" constant="20" id="cvD-f3-g0l"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bLe-er-zQk" secondAttribute="trailing" constant="50" id="hV5-ar-ExM"/>
+                            <constraint firstItem="xjF-Pz-NVi" firstAttribute="trailing" secondItem="bLe-er-zQk" secondAttribute="trailing" id="hV5-ar-ExM"/>
                             <constraint firstItem="xjF-Pz-NVi" firstAttribute="top" secondItem="A2Y-J4-EI0" secondAttribute="bottom" constant="20" id="joj-JE-AmR"/>
-                            <constraint firstItem="A2Y-J4-EI0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="oks-gl-r3b"/>
-                            <constraint firstItem="hMS-f9-MJV" firstAttribute="top" secondItem="bLe-er-zQk" secondAttribute="bottom" constant="20" id="wgF-5d-wJc"/>
+                            <constraint firstItem="A2Y-J4-EI0" firstAttribute="top" secondItem="ea2-a0-X07" secondAttribute="bottom" constant="50" id="mOS-4u-aqT"/>
+                            <constraint firstItem="A2Y-J4-EI0" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="30" id="oks-gl-r3b"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="14J-O6-d5X" secondAttribute="bottom" constant="30" id="pYf-yW-r9j"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
@@ -68,6 +99,7 @@
                     <connections>
                         <outlet property="emailField" destination="A2Y-J4-EI0" id="OFa-qT-9uj"/>
                         <outlet property="passwordField" destination="xjF-Pz-NVi" id="bgO-xO-gN5"/>
+                        <outlet property="signInButton" destination="bLe-er-zQk" id="cwZ-5L-bKV"/>
                         <segue destination="ZBo-Px-xZG" kind="showDetail" identifier="signInSegue" id="ikC-EO-hdZ"/>
                     </connections>
                 </viewController>
@@ -84,38 +116,82 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vKd-M8-D5H">
-                                <rect key="frame" x="50" y="364" width="314" height="34"/>
+                                <rect key="frame" x="30" y="364" width="354" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" textContentType="email"/>
                             </textField>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZlI-CG-X1j">
-                                <rect key="frame" x="50" y="418" width="314" height="34"/>
+                                <rect key="frame" x="30" y="418" width="354" height="34"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES" textContentType="new-password"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E56-yr-134">
-                                <rect key="frame" x="50" y="472" width="314" height="30"/>
-                                <color key="backgroundColor" systemColor="linkColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <rect key="frame" x="30" y="472" width="354" height="40"/>
+                                <color key="backgroundColor" name="whoot-button"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="gsK-PA-t6e"/>
+                                </constraints>
                                 <state key="normal" title="Create Account">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    <color key="titleColor" name="whoot-bg"/>
                                 </state>
                                 <connections>
                                     <action selector="signUpAction:" destination="a1S-T1-r0r" eventType="touchUpInside" id="E3Q-H3-LLx"/>
                                 </connections>
                             </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cy3-MB-c72">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whoot-white" translatesAutoresizingMaskIntoConstraints="NO" id="zm0-n2-Z6I">
+                                        <rect key="frame" x="79" y="10" width="256" height="60"/>
+                                        <color key="tintColor" name="whoot-logo"/>
+                                    </imageView>
+                                </subviews>
+                                <color key="backgroundColor" name="whoot-bg"/>
+                                <constraints>
+                                    <constraint firstItem="zm0-n2-Z6I" firstAttribute="top" secondItem="Cy3-MB-c72" secondAttribute="top" constant="10" id="19A-6h-52X"/>
+                                    <constraint firstItem="zm0-n2-Z6I" firstAttribute="centerX" secondItem="Cy3-MB-c72" secondAttribute="centerX" id="ARq-ng-yzv"/>
+                                    <constraint firstAttribute="bottom" secondItem="zm0-n2-Z6I" secondAttribute="bottom" constant="10" id="TD6-De-7XZ"/>
+                                    <constraint firstAttribute="height" constant="80" id="cvG-d8-gPq"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWQ-9f-gce">
+                                <rect key="frame" x="30" y="130" width="354" height="51"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share your thoughts anonymously with your local community. Join Whoot today." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcJ-xB-Cwg">
+                                <rect key="frame" x="30" y="191" width="354" height="41"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" name="whoot-bg"/>
                         <constraints>
-                            <constraint firstItem="dfp-qy-EEY" firstAttribute="trailing" secondItem="E56-yr-134" secondAttribute="trailing" constant="50" id="1EW-Q6-Z57"/>
-                            <constraint firstItem="ZlI-CG-X1j" firstAttribute="leading" secondItem="dfp-qy-EEY" secondAttribute="leading" constant="50" id="9X4-3y-0J6"/>
+                            <constraint firstItem="ZlI-CG-X1j" firstAttribute="trailing" secondItem="E56-yr-134" secondAttribute="trailing" id="1EW-Q6-Z57"/>
+                            <constraint firstItem="YWQ-9f-gce" firstAttribute="trailing" secondItem="lcJ-xB-Cwg" secondAttribute="trailing" id="3Nj-Jb-v6c"/>
+                            <constraint firstItem="ZlI-CG-X1j" firstAttribute="leading" secondItem="vKd-M8-D5H" secondAttribute="leading" id="9X4-3y-0J6"/>
                             <constraint firstItem="ZlI-CG-X1j" firstAttribute="top" secondItem="vKd-M8-D5H" secondAttribute="bottom" constant="20" id="AbK-Yn-iBL"/>
-                            <constraint firstItem="dfp-qy-EEY" firstAttribute="trailing" secondItem="vKd-M8-D5H" secondAttribute="trailing" constant="50" id="FyO-Zm-HVs"/>
-                            <constraint firstItem="dfp-qy-EEY" firstAttribute="trailing" secondItem="ZlI-CG-X1j" secondAttribute="trailing" constant="50" id="UCO-aa-aWL"/>
-                            <constraint firstItem="E56-yr-134" firstAttribute="leading" secondItem="dfp-qy-EEY" secondAttribute="leading" constant="50" id="XB1-6T-HV9"/>
+                            <constraint firstItem="Cy3-MB-c72" firstAttribute="leading" secondItem="dfp-qy-EEY" secondAttribute="leading" id="BWU-fW-Uz3"/>
+                            <constraint firstItem="YWQ-9f-gce" firstAttribute="trailing" secondItem="vKd-M8-D5H" secondAttribute="trailing" id="FyO-Zm-HVs"/>
+                            <constraint firstItem="dfp-qy-EEY" firstAttribute="trailing" secondItem="Cy3-MB-c72" secondAttribute="trailing" id="OPw-Us-Ztw"/>
+                            <constraint firstItem="lcJ-xB-Cwg" firstAttribute="top" secondItem="YWQ-9f-gce" secondAttribute="bottom" constant="10" id="REH-9d-6Is"/>
+                            <constraint firstItem="YWQ-9f-gce" firstAttribute="leading" secondItem="dfp-qy-EEY" secondAttribute="leading" constant="30" id="SpC-Vy-bGI"/>
+                            <constraint firstItem="lcJ-xB-Cwg" firstAttribute="leading" secondItem="YWQ-9f-gce" secondAttribute="leading" id="Tgo-h2-5zf"/>
+                            <constraint firstItem="vKd-M8-D5H" firstAttribute="trailing" secondItem="ZlI-CG-X1j" secondAttribute="trailing" id="UCO-aa-aWL"/>
+                            <constraint firstItem="E56-yr-134" firstAttribute="leading" secondItem="ZlI-CG-X1j" secondAttribute="leading" id="XB1-6T-HV9"/>
                             <constraint firstItem="vKd-M8-D5H" firstAttribute="centerX" secondItem="5T8-f7-BS2" secondAttribute="centerX" id="Ygu-uK-PBK"/>
                             <constraint firstItem="E56-yr-134" firstAttribute="top" secondItem="ZlI-CG-X1j" secondAttribute="bottom" constant="20" id="cKT-hm-s9n"/>
+                            <constraint firstItem="YWQ-9f-gce" firstAttribute="top" secondItem="Cy3-MB-c72" secondAttribute="bottom" constant="50" id="dKt-b1-BGY"/>
+                            <constraint firstItem="Cy3-MB-c72" firstAttribute="top" secondItem="dfp-qy-EEY" secondAttribute="top" id="dYb-yc-rho"/>
                             <constraint firstItem="vKd-M8-D5H" firstAttribute="centerY" secondItem="5T8-f7-BS2" secondAttribute="centerY" constant="-40" id="dbr-9j-09I"/>
-                            <constraint firstItem="vKd-M8-D5H" firstAttribute="leading" secondItem="dfp-qy-EEY" secondAttribute="leading" constant="50" id="f4n-ew-uLi"/>
+                            <constraint firstItem="vKd-M8-D5H" firstAttribute="leading" secondItem="YWQ-9f-gce" secondAttribute="leading" id="f4n-ew-uLi"/>
+                            <constraint firstItem="dfp-qy-EEY" firstAttribute="trailing" secondItem="YWQ-9f-gce" secondAttribute="trailing" constant="30" id="wZQ-ra-8pm"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="dfp-qy-EEY"/>
                     </view>
@@ -123,12 +199,13 @@
                     <connections>
                         <outlet property="emailField" destination="vKd-M8-D5H" id="CLP-a3-QCV"/>
                         <outlet property="passwordField" destination="ZlI-CG-X1j" id="px0-Zb-3Mw"/>
+                        <outlet property="signUpButton" destination="E56-yr-134" id="TDn-Ho-QU5"/>
                         <segue destination="ZBo-Px-xZG" kind="show" identifier="createAccountSegue" id="fRr-m3-fHx"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tMb-7G-Q9p" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1152" y="3526"/>
+            <point key="canvasLocation" x="-1152.1739130434783" y="3525.6696428571427"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="5TK-TE-hYa">
@@ -140,6 +217,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="1000" height="1000"/>
                         <autoresizingMask key="autoresizingMask"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" name="whoot"/>
                     </tabBar>
                     <connections>
                         <segue destination="Uah-8A-zXR" kind="relationship" relationship="viewControllers" id="IfP-aI-9Q5"/>
@@ -225,7 +303,23 @@
             <point key="canvasLocation" x="959" y="3240"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="whoot-white" width="128" height="128"/>
+        <namedColor name="whoot">
+            <color red="0.52941176470588236" green="0.52156862745098043" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="whoot-bg">
+            <color red="0.52941176470588236" green="0.52156862745098043" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+        <namedColor name="whoot-button">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+        <namedColor name="whoot-logo">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </namedColor>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="fRr-m3-fHx"/>
     </inferredMetricsTieBreakers>
+    <color key="tintColor" name="whoot"/>
 </document>
