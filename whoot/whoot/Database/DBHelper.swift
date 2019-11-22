@@ -99,10 +99,17 @@ struct DBHelper {
         }
     }
     
-    func getPostsByUID(uid: String) {
+    static func getPostCountByUID(uid: String) -> Int {
         // Query for posts using the user's UID
         // We assume that the Post object will have a fromDictionary() method that deserializes its data
         // Return an array of Post objects associated with the provided UID
+        
+        // This code is not yet functional.
+        var c : Int = -1
+        self.posts.observeSingleEvent(of: .value, with: { (snapshot) in
+            c = Int(snapshot.childrenCount)
+        })
+        return c
     }
     
     static func getAllPosts(completion: @escaping ([userPost], Error?) -> ()) {
