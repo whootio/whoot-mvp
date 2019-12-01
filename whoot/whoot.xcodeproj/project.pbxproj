@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		04810739238389F00009E8EC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04810738238389F00009E8EC /* ProfileViewController.swift */; };
 		07054E3B236D16CC00C988CB /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07054E3A236D16CC00C988CB /* SignInView.swift */; };
 		07054E3D236D16D800C988CB /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07054E3C236D16D800C988CB /* SignUpView.swift */; };
 		074DA8E8237CBF32004E1FD7 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074DA8E7237CBF32004E1FD7 /* NewPostViewController.swift */; };
@@ -50,6 +51,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		04810738238389F00009E8EC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		07054E3A236D16CC00C988CB /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		07054E3C236D16D800C988CB /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		074DA8E7237CBF32004E1FD7 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
@@ -115,6 +117,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		04810737238389320009E8EC /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				04810738238389F00009E8EC /* ProfileViewController.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
 		07054E39236D169C00C988CB /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -149,6 +159,7 @@
 		07964C65236A726300C5A3AC /* whoot */ = {
 			isa = PBXGroup;
 			children = (
+				04810737238389320009E8EC /* Profile */,
 				07DC171E23748F380079652C /* Storyboards */,
 				079981F52371FB14006DE754 /* Database */,
 				07054E39236D169C00C988CB /* Authentication */,
@@ -468,6 +479,7 @@
 				A9CB025E2371231E001F2AC6 /* Post.swift in Sources */,
 				07054E3B236D16CC00C988CB /* SignInView.swift in Sources */,
 				074DA8E8237CBF32004E1FD7 /* NewPostViewController.swift in Sources */,
+				04810739238389F00009E8EC /* ProfileViewController.swift in Sources */,
 				07054E3D236D16D800C988CB /* SignUpView.swift in Sources */,
 				074DA8EA237CD04A004E1FD7 /* PostTableViewCell.swift in Sources */,
 				079981F72371FB4C006DE754 /* DBHelper.swift in Sources */,
