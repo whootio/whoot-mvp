@@ -8,17 +8,16 @@
 
 import Foundation
 import CoreLocation
-import MapKit
 
-class LocationHelper: NSObject,CLLocationManagerDelegate{
-    
-    let locationManager =  CLLocationManager()
-    
-    func getLocation(){
-        locationManager.requestAlwaysAuthorization()
 
-        // For use in foreground
-        self.locationManager.requestWhenInUseAuthorization()
+class LocationHelper:NSObject,CLLocationManagerDelegate{
+    let locationManager = CLLocationManager()
+    
+    
+    
+    func getLoc(){
+        // Ask for Authorisation from the User.
+        self.locationManager.requestAlwaysAuthorization()
 
         if CLLocationManager.locationServicesEnabled() {
             locationManager.delegate = self
@@ -26,17 +25,10 @@ class LocationHelper: NSObject,CLLocationManagerDelegate{
             locationManager.startUpdatingLocation()
         }
     }
-    
-    
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
-        guard let locValue: CLLocationCoordinate2D = manager.location?.coordinate else { return }
+        let locValue:CLLocationCoordinate2D = manager.location!.coordinate
         print("locations = \(locValue.latitude) \(locValue.longitude)")
     }
-
-
-    
-    
-    
     
     
 }
