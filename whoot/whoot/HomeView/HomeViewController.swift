@@ -88,6 +88,10 @@ class HomeViewController: UITableViewController {
         // #warning Incomplete implementation, return the number of rows
         return posts.count
     }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return "Within X miles of City, ST"
+    }
 
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell : PostTableViewCell = tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell", for: indexPath) as! PostTableViewCell
@@ -96,7 +100,7 @@ class HomeViewController: UITableViewController {
 
         // Configure the cell...
         cell.bodyText.text = post.getPostText()
-        cell.timestamp.text = post.getTimestamp()
+        cell.timestamp.text = "\(post.getTimeAgo())"
         cell.upvoteCount.text = "\(post.getPoints())"
 
         return cell
