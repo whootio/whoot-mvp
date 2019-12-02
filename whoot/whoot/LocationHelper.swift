@@ -15,7 +15,7 @@ class locationHelper:NSObject,CLLocationManagerDelegate{
     
     var temp:[Double] = [0,0]
     
-    
+
     func getLoc()->Array<Any>{
         // Ask for Authorisation from the User.
         self.locationManager.requestAlwaysAuthorization()
@@ -33,7 +33,6 @@ class locationHelper:NSObject,CLLocationManagerDelegate{
         print("locations = \(locValue.latitude) \(locValue.longitude)")
         self.temp[0] = locValue.latitude
         self.temp[1] = locValue.longitude
-        
     }
     
     

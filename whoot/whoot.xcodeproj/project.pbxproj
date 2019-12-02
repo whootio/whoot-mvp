@@ -207,8 +207,8 @@
 		07D8DDBD236EA81C0099E7F8 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
-				07D8DDC8236F63E80099E7F8 /* HomeViewController.swift */,
 				074DA8E7237CBF32004E1FD7 /* NewPostViewController.swift */,
+				07D8DDC8236F63E80099E7F8 /* HomeViewController.swift */,
 				074DA8E9237CD04A004E1FD7 /* PostTableViewCell.swift */,
 			);
 			path = HomeView;

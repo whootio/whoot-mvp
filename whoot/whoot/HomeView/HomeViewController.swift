@@ -12,7 +12,7 @@ import Firebase
 class HomeViewController: UITableViewController {
     
     var posts = [userPost]()
-    let loc = locationHelper()
+  
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,8 +25,7 @@ class HomeViewController: UITableViewController {
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-        var a = loc.getLoc()
-        print("locations = \(a[0]) \(a[1])")
+        
         getPosts()
     }
     
