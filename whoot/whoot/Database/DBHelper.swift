@@ -8,12 +8,16 @@
 
 import Firebase
 import CoreLocation
+import UIKit
+import Foundation
 
 struct DBHelper {
     
     static var db = Database.database().reference()
     static var users = db.child("users")
     static var posts = db.child("posts")
+    
+    let loc = locationHelper()
     
     // MARK: Helper functions
     
@@ -134,5 +138,7 @@ struct DBHelper {
         // If it's null, grab all posts (maybe)
         // If it's available use it to query for posts within a specified mile radius
         // Return a list of all posts within the provided location
+        
+        
     }
 }
