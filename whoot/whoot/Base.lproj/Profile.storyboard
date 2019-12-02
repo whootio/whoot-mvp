@@ -61,7 +61,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Posts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hs8-YX-93w">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total Posts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hs8-YX-93w" userLabel="totalPosts">
                                 <rect key="frame" x="20" y="271" width="374" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
@@ -113,6 +113,7 @@
                         <outlet property="joinedLabel" destination="2AR-T3-kw9" id="jbu-LP-S0o"/>
                         <outlet property="lastSeenLabel" destination="J17-z3-Krb" id="xn5-a1-gT4"/>
                         <outlet property="nameLabel" destination="w0Z-tO-QTs" id="mwe-0b-pJd"/>
+                        <outlet property="totalPosts" destination="hs8-YX-93w" id="fxl-cb-qzs"/>
                         <outlet property="totalPostsLabel" destination="kGy-xl-HFA" id="KJj-VZ-udT"/>
                         <outlet property="upvotesLabel" destination="W9Q-mJ-tL9" id="wfR-uv-Yfl"/>
                     </connections>

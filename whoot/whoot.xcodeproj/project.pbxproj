@@ -28,6 +28,7 @@
 		07DC174B2374982A0079652C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07DC17492374982A0079652C /* Profile.storyboard */; };
 		0A60A18A0DCEF639985C4487 /* Pods_whootUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89A95B4053003D19B95FB8AB /* Pods_whootUITests.framework */; };
 		7E6CA89C69FD1A34A9F37E05 /* Pods_whootTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64EF0292CB10F38594313F7D /* Pods_whootTests.framework */; };
+		7F38BE6B23947C130079B8C4 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F38BE6A23947C130079B8C4 /* LocationHelper.swift */; };
 		A9CB025E2371231E001F2AC6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB025D2371231D001F2AC6 /* Post.swift */; };
 		A9CB026023712333001F2AC6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB025F23712333001F2AC6 /* User.swift */; };
 		B09AE349897E4EA81703872E /* Pods_whoot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E9F70B353B1548E0F50E03B /* Pods_whoot.framework */; };
@@ -82,6 +83,7 @@
 		439323856DA37DE0A6B1F036 /* Pods-whootTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whootTests.release.xcconfig"; path = "Target Support Files/Pods-whootTests/Pods-whootTests.release.xcconfig"; sourceTree = "<group>"; };
 		53E82D95237E75FD877782CF /* Pods-whootTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whootTests.debug.xcconfig"; path = "Target Support Files/Pods-whootTests/Pods-whootTests.debug.xcconfig"; sourceTree = "<group>"; };
 		64EF0292CB10F38594313F7D /* Pods_whootTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_whootTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F38BE6A23947C130079B8C4 /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 		89A95B4053003D19B95FB8AB /* Pods_whootUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_whootUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9CB025D2371231D001F2AC6 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A9CB025F23712333001F2AC6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
@@ -159,6 +161,7 @@
 		07964C65236A726300C5A3AC /* whoot */ = {
 			isa = PBXGroup;
 			children = (
+				7F38BE6A23947C130079B8C4 /* LocationHelper.swift */,
 				04810737238389320009E8EC /* Profile */,
 				07DC171E23748F380079652C /* Storyboards */,
 				079981F52371FB14006DE754 /* Database */,
@@ -204,8 +207,8 @@
 		07D8DDBD236EA81C0099E7F8 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
-				07D8DDC8236F63E80099E7F8 /* HomeViewController.swift */,
 				074DA8E7237CBF32004E1FD7 /* NewPostViewController.swift */,
+				07D8DDC8236F63E80099E7F8 /* HomeViewController.swift */,
 				074DA8E9237CD04A004E1FD7 /* PostTableViewCell.swift */,
 			);
 			path = HomeView;
@@ -473,6 +476,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F38BE6B23947C130079B8C4 /* LocationHelper.swift in Sources */,
 				07D8DDC9236F63E80099E7F8 /* HomeViewController.swift in Sources */,
 				07964C67236A726300C5A3AC /* AppDelegate.swift in Sources */,
 				07964C69236A726300C5A3AC /* SceneDelegate.swift in Sources */,
@@ -690,13 +694,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 6X2XSAAA2H;
+				DEVELOPMENT_TEAM = 747CY4AS9H;
 				INFOPLIST_FILE = "$(SRCROOT)/whoot/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.caestrada.whoot;
+				PRODUCT_BUNDLE_IDENTIFIER = com.caestrada.whoots;
 				PRODUCT_NAME = Whoot;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
