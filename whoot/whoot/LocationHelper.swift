@@ -10,12 +10,13 @@ import Foundation
 import CoreLocation
 
 
-class LocationHelper:NSObject,CLLocationManagerDelegate{
+class locationHelper:NSObject,CLLocationManagerDelegate{
     let locationManager = CLLocationManager()
     
+    var temp:[Double] = [0,0]
     
     
-    func getLoc(){
+    func getLoc()->Array<Any>{
         // Ask for Authorisation from the User.
         self.locationManager.requestAlwaysAuthorization()
 
@@ -23,12 +24,18 @@ class LocationHelper:NSObject,CLLocationManagerDelegate{
             locationManager.delegate = self
             locationManager.desiredAccuracy = kCLLocationAccuracyNearestTenMeters
             locationManager.startUpdatingLocation()
+            //return temp;
         }
+        return temp;
     }
     func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
         let locValue:CLLocationCoordinate2D = manager.location!.coordinate
         print("locations = \(locValue.latitude) \(locValue.longitude)")
+        self.temp[0] = locValue.latitude
+        self.temp[1] = locValue.longitude
+        
     }
+    
     
     
 }
