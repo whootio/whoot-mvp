@@ -12,7 +12,8 @@ import Firebase
 class HomeViewController: UITableViewController {
     
     var posts = [userPost]()
-
+  
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tableView.refreshControl = UIRefreshControl()

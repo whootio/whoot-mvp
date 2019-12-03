@@ -156,5 +156,7 @@ struct DBHelper {
         // If it's null, grab all posts (maybe)
         // If it's available use it to query for posts within a specified mile radius
         // Return a list of all posts within the provided location
+        
+        
     }
 }
