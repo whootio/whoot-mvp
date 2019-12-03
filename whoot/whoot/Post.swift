@@ -78,7 +78,13 @@ class userPost{
     func getTimestamp() -> String {
         return createdAt
     }
-    
+  
+    func getTimeAgo() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let date = formatter.date(from: self.createdAt)!
+        return date.timeAgo()
+    }
     
     func toDictionary() -> [AnyHashable : Any] {
         /*
@@ -86,7 +92,7 @@ class userPost{
         for post in comment{
         comments[post.getUID()] = post.toDictionary()
         }
- */
+        */
         
         var dict = [AnyHashable : Any]()
         dict = [

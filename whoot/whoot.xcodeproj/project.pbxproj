@@ -10,6 +10,7 @@
 		04810739238389F00009E8EC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04810738238389F00009E8EC /* ProfileViewController.swift */; };
 		07054E3B236D16CC00C988CB /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07054E3A236D16CC00C988CB /* SignInView.swift */; };
 		07054E3D236D16D800C988CB /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07054E3C236D16D800C988CB /* SignUpView.swift */; };
+		0744F6572395CC9C005444F9 /* DateTimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0744F6562395CC9C005444F9 /* DateTimeAgo.swift */; };
 		074DA8E8237CBF32004E1FD7 /* NewPostViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074DA8E7237CBF32004E1FD7 /* NewPostViewController.swift */; };
 		074DA8EA237CD04A004E1FD7 /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 074DA8E9237CD04A004E1FD7 /* PostTableViewCell.swift */; };
 		07964C67236A726300C5A3AC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07964C66236A726300C5A3AC /* AppDelegate.swift */; };
@@ -18,6 +19,7 @@
 		07964C7E236A726600C5A3AC /* whootTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07964C7D236A726600C5A3AC /* whootTests.swift */; };
 		07964C89236A726600C5A3AC /* whootUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07964C88236A726600C5A3AC /* whootUITests.swift */; };
 		079981F72371FB4C006DE754 /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 079981F62371FB4C006DE754 /* DBHelper.swift */; };
+		07A616762395C2D2002A9A2E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A616752395C2D2002A9A2E /* SettingsViewController.swift */; };
 		07B536EA236A77EB00F70C8F /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 07B536E9236A77EB00F70C8F /* GoogleService-Info.plist */; };
 		07D8DDC9236F63E80099E7F8 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07D8DDC8236F63E80099E7F8 /* HomeViewController.swift */; };
 		07DC173B237493E10079652C /* Explore.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07DC172B237493E10079652C /* Explore.storyboard */; };
@@ -56,6 +58,7 @@
 		04810738238389F00009E8EC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		07054E3A236D16CC00C988CB /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		07054E3C236D16D800C988CB /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
+		0744F6562395CC9C005444F9 /* DateTimeAgo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeAgo.swift; sourceTree = "<group>"; };
 		074DA8E7237CBF32004E1FD7 /* NewPostViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewPostViewController.swift; sourceTree = "<group>"; };
 		074DA8E9237CD04A004E1FD7 /* PostTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTableViewCell.swift; sourceTree = "<group>"; };
 		07964C63236A726300C5A3AC /* Whoot.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Whoot.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -70,6 +73,7 @@
 		07964C88236A726600C5A3AC /* whootUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = whootUITests.swift; sourceTree = "<group>"; };
 		07964C8A236A726600C5A3AC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		079981F62371FB4C006DE754 /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
+		07A616752395C2D2002A9A2E /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		07B536E9236A77EB00F70C8F /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		07D8DDC8236F63E80099E7F8 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		07DC172C237493E10079652C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = whoot/Base.lproj/Explore.storyboard; sourceTree = SOURCE_ROOT; };
@@ -125,6 +129,7 @@
 			isa = PBXGroup;
 			children = (
 				04810738238389F00009E8EC /* ProfileViewController.swift */,
+				07A616752395C2D2002A9A2E /* SettingsViewController.swift */,
 			);
 			path = Profile;
 			sourceTree = "<group>";
@@ -136,6 +141,14 @@
 				07054E3C236D16D800C988CB /* SignUpView.swift */,
 			);
 			path = Authentication;
+			sourceTree = "<group>";
+		};
+		0744F6552395CC83005444F9 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				0744F6562395CC9C005444F9 /* DateTimeAgo.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		07964C5A236A726300C5A3AC = {
@@ -163,6 +176,7 @@
 		07964C65236A726300C5A3AC /* whoot */ = {
 			isa = PBXGroup;
 			children = (
+				0744F6552395CC83005444F9 /* Helpers */,
 				7F38BE6A23947C130079B8C4 /* LocationHelper.swift */,
 				04810737238389320009E8EC /* Profile */,
 				07DC171E23748F380079652C /* Storyboards */,
@@ -489,6 +503,8 @@
 				04810739238389F00009E8EC /* ProfileViewController.swift in Sources */,
 				07054E3D236D16D800C988CB /* SignUpView.swift in Sources */,
 				074DA8EA237CD04A004E1FD7 /* PostTableViewCell.swift in Sources */,
+				0744F6572395CC9C005444F9 /* DateTimeAgo.swift in Sources */,
+				07A616762395C2D2002A9A2E /* SettingsViewController.swift in Sources */,
 				079981F72371FB4C006DE754 /* DBHelper.swift in Sources */,
 				A9E78F72238638020030E8D4 /* Comment.swift in Sources */,
 				A9CB026023712333001F2AC6 /* User.swift in Sources */,

@@ -1,38 +1,37 @@
 //
-//  HomeViewController.swift
+//  SettingsViewController.swift
 //  whoot
 //
-//  Created by Carlos Estrada on 11/3/19.
+//  Created by Carlos Estrada on 12/2/19.
 //  Copyright © 2019 Carlos Estrada. All rights reserved.
 //
 
 import UIKit
-import Firebase
+import FirebaseAuth
 
-class HomeViewController: UITableViewController {
+class SettingsViewController: UITableViewController {
+
+    // Location Settings
+    @IBOutlet weak var locationUnits: UISegmentedControl!
+    @IBOutlet weak var locationDistance: UILabel!
     
-    var posts = [userPost]()
-  
+    // Profile Settings
+    @IBOutlet weak var publicProfile: UISwitch!
+    
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.tableView.refreshControl = UIRefreshControl()
-        self.tableView.refreshControl?.addTarget(self, action: #selector(getPosts), for: .valueChanged)
-        self.tableView.rowHeight = UITableView.automaticDimension
-        self.tableView.estimatedRowHeight = 200
-        
-        checkIfUserSignedIn()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-        
-        getPosts()
-       
-        
+
+        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
+        // self.navigationItem.rightBarButtonItem = self.editButtonItem
     }
-    
+
     // MARK: - Sign Out
-    @IBAction func signOut() {
+    func signOut(_ sender: Any) {
         do {
             try Auth.auth().signOut()
             let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
@@ -47,66 +46,25 @@ class HomeViewController: UITableViewController {
         }
     }
     
-    func checkIfUserSignedIn() {
-        if Auth.auth().currentUser != nil {
-                    
-            // User is signed in.
-            print("\nUser already signed in \(String(describing: Auth.auth().currentUser?.uid))\n")
-            
-                    
-        } else {
-            
-            // No user is signed in.
-            print("No user signed in")
-            let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
-            let signIn = mainStoryboard.instantiateViewController(withIdentifier: "SignInView") as! SignInView
-            self.present(signIn, animated: true, completion: nil)
-
-        }
-    }
-    
-    @objc func getPosts() {
-        getAllPosts()
-    }
-    
-    func getAllPosts() {
-        DBHelper.getAllPosts { (userPosts, error) in
-            if error != nil {
-                return
-            }
-            self.posts = userPosts
-            self.tableView.reloadData()
-            self.tableView.refreshControl?.endRefreshing()
-        }
-    }
-
     // MARK: - Table view data source
-
-    override func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if indexPath.section == 2 && indexPath.row == 0 {
+            signOut(self)
+            self.tableView.deselectRow(at: indexPath, animated: true)
     }
 
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return posts.count
     }
     
-    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Within X miles of City, ST"
-    }
-
+    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell : PostTableViewCell = tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell", for: indexPath) as! PostTableViewCell
-        
-        let post = posts[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
-        cell.bodyText.text = post.getPostText()
-        cell.timestamp.text = "\(post.getTimeAgo())"
-        cell.upvoteCount.text = "\(post.getPoints())"
 
         return cell
     }
+    */
 
     /*
     // Override to support conditional editing of the table view.
