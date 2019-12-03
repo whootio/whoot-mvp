@@ -86,15 +86,13 @@ class userPost{
         return date.timeAgo()
     }
     
-    //func getLocation() -> Location
-    
     func toDictionary() -> [AnyHashable : Any] {
         /*
         var comments = [AnyHashable : Any]()
         for post in comment{
         comments[post.getUID()] = post.toDictionary()
         }
- */
+        */
         
         var dict = [AnyHashable : Any]()
         dict = [
