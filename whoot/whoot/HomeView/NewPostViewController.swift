@@ -38,6 +38,10 @@ class NewPostViewController: UIViewController {
             }
             else {
                 self.dismiss(animated: true, completion: nil)
+                // test comments DELETE AFTERWARDS. BREAKS DB.
+//                DBHelper.createComment(post: post, commentText: "testing comments") { (error, ref) in
+//
+//                }
             }
         }
         
