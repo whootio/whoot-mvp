@@ -31,6 +31,7 @@
 		7F38BE6B23947C130079B8C4 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F38BE6A23947C130079B8C4 /* LocationHelper.swift */; };
 		A9CB025E2371231E001F2AC6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB025D2371231D001F2AC6 /* Post.swift */; };
 		A9CB026023712333001F2AC6 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB025F23712333001F2AC6 /* User.swift */; };
+		A9E78F72238638020030E8D4 /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9E78F71238638020030E8D4 /* Comment.swift */; };
 		B09AE349897E4EA81703872E /* Pods_whoot.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1E9F70B353B1548E0F50E03B /* Pods_whoot.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,7 @@
 		89A95B4053003D19B95FB8AB /* Pods_whootUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_whootUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9CB025D2371231D001F2AC6 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		A9CB025F23712333001F2AC6 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		A9E78F71238638020030E8D4 /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
 		C8B13EB4DE6195E620BD51A0 /* Pods-whootUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whootUITests.debug.xcconfig"; path = "Target Support Files/Pods-whootUITests/Pods-whootUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		ECCC6F4474E7A0B8E80DB54D /* Pods-whoot.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whoot.release.xcconfig"; path = "Target Support Files/Pods-whoot/Pods-whoot.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,6 +171,7 @@
 				07D8DDBD236EA81C0099E7F8 /* HomeView */,
 				A9CB025F23712333001F2AC6 /* User.swift */,
 				A9CB025D2371231D001F2AC6 /* Post.swift */,
+				A9E78F71238638020030E8D4 /* Comment.swift */,
 				07964C66236A726300C5A3AC /* AppDelegate.swift */,
 				07964C68236A726300C5A3AC /* SceneDelegate.swift */,
 				07964C6F236A726600C5A3AC /* Assets.xcassets */,
@@ -487,6 +490,7 @@
 				07054E3D236D16D800C988CB /* SignUpView.swift in Sources */,
 				074DA8EA237CD04A004E1FD7 /* PostTableViewCell.swift in Sources */,
 				079981F72371FB4C006DE754 /* DBHelper.swift in Sources */,
+				A9E78F72238638020030E8D4 /* Comment.swift in Sources */,
 				A9CB026023712333001F2AC6 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
