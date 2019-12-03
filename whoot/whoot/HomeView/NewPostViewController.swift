@@ -38,6 +38,7 @@ class NewPostViewController: UIViewController {
             }
             else {
                 self.dismiss(animated: true, completion: nil)
+                
             }
         }
         

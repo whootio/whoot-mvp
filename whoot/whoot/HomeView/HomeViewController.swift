@@ -26,6 +26,8 @@ class HomeViewController: UITableViewController {
         // self.clearsSelectionOnViewWillAppear = false
         
         getPosts()
+       
+        
     }
     
     // MARK: - Sign Out

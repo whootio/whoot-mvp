@@ -73,7 +73,7 @@ class commentS{
         return createdAt
     }
     
-    /*
+    
     func toDictionary() -> [AnyHashable : Any] {
         var dict = [AnyHashable : Any]()
         dict = [
@@ -94,6 +94,6 @@ class commentS{
         downVotes = dictionary["downvotes"] as! Int
         createdAt = dictionary["created_at"] as! String
     }
- */
+ 
     
 }

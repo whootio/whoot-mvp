@@ -99,6 +99,35 @@ struct DBHelper {
         }
     }
     
+    static func createComment(post: userPost, commentText: String, completion: @escaping (Error?, DatabaseReference?) -> ()) {
+        // We can assume that a user is already signed in
+        var p = posts.child(post.getUID())
+        var comment = p.child("comments").childByAutoId()
+        var commentClass = commentS(text: commentText)
+        // initialize the post information
+        commentClass.setTimestamp()
+        
+        // Grab the current user's information for associating it with the post
+        if let user = Auth.auth().currentUser {
+            commentClass.setUID(uid: user.uid)
+        }
+        
+        // Create mutable (modifiable) dictionary
+        let commentDict = commentClass.toDictionary()
+        
+        // Generate a UID for the post and insert it into the database
+        comment.setValue(commentDict) { (error, ref) in
+            if error != nil {
+                print("Create Post Error: \(String(describing: error?.localizedDescription))")
+                completion(error, ref)
+            }
+            else {
+                print("Create Post Success.")
+                completion(nil, ref)
+            }
+        }
+    }
+    
     func getPostsByUID(uid: String) {
         // Query for posts using the user's UID
         // We assume that the Post object will have a fromDictionary() method that deserializes its data
