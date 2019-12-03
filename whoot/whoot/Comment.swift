@@ -1,17 +1,15 @@
 //
-//  post.swift
+//  Comment.swift
 //  whoot
 //
-//  Created by Chris  on 11/4/19.
+//  Created by Chris  on 11/20/19.
 //  Copyright © 2019 Carlos Estrada. All rights reserved.
 //
 
 import Foundation
-
-class userPost{
+class commentS{
     private var text: String = ""
     private var UID: String = ""
-    private var comment = [commentS]()
     private var upVotes: Int = 0
     private var downVotes: Int = 0
     private var createdAt: String = ""
@@ -21,15 +19,11 @@ class userPost{
         self.downVotes = 0
         self.upVotes = 0
     }
-    
-    func addComment(p:commentS){
-        self.comment.append(p)
-    }
-    
+    /*
     init(dictionary: [AnyHashable : Any]) {
         fromDictionary(dictionary: dictionary)
     }
-    
+    */
     func setUID(uid: String) {
         self.UID = uid
     }
@@ -78,22 +72,9 @@ class userPost{
     func getTimestamp() -> String {
         return createdAt
     }
-  
-    func getTimeAgo() -> String {
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
-        let date = formatter.date(from: self.createdAt)!
-        return date.timeAgo()
-    }
+    
     
     func toDictionary() -> [AnyHashable : Any] {
-        /*
-        var comments = [AnyHashable : Any]()
-        for post in comment{
-        comments[post.getUID()] = post.toDictionary()
-        }
-        */
-        
         var dict = [AnyHashable : Any]()
         dict = [
             "uid": UID,
@@ -113,5 +94,6 @@ class userPost{
         downVotes = dictionary["downvotes"] as! Int
         createdAt = dictionary["created_at"] as! String
     }
+ 
     
 }
