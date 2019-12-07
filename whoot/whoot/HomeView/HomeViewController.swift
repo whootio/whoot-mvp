@@ -8,11 +8,12 @@
 
 import UIKit
 import Firebase
-
+import CoreLocation
 class HomeViewController: UITableViewController {
     
     var posts = [userPost]()
-  
+    var loc = locationHelper()
+   
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,9 +26,16 @@ class HomeViewController: UITableViewController {
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
-        
+        //loc.getLoc()
+        //var a = loc.returnArr()
+        //var a = loc.lon
+        print(loc.lon)
+        print(loc.lat)
+
         getPosts()
     }
+    
+
     
     // MARK: - Sign Out
     @IBAction func signOut() {

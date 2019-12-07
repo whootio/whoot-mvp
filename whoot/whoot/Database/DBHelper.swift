@@ -17,7 +17,7 @@ struct DBHelper {
     static var users = db.child("users")
     static var posts = db.child("posts")
     
-    let loc = locationHelper()
+    //let loc = locationHelper()
     
     // MARK: Helper functions
     
@@ -78,9 +78,10 @@ struct DBHelper {
     static func createPost(post: userPost, completion: @escaping (Error?, DatabaseReference?) -> ()) {
         // We can assume that a user is already signed in
         
+        
         // initialize the post information
         post.setTimestamp()
-        
+        post.setLocation()
         // Grab the current user's information for associating it with the post
         if let user = Auth.auth().currentUser {
             post.setUID(uid: user.uid)
