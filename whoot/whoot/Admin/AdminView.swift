@@ -9,6 +9,7 @@
 import Foundation
 import UIKit
 import WebKit
+import FirebaseAuth
 
 class AdminView : UIViewController {
     @IBOutlet weak var adminWebView: WKWebView!
@@ -16,13 +17,21 @@ class AdminView : UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // swipe-able delete/suspend?
-        let url = URL(string: "https://coursework.regex.be")
-        let Request = URLRequest(url: url!)
+        guard let user = Auth.auth().currentUser else { return }
         
-        adminWebView.load(Request)
-        
-        //adminWebView.
+        user.getIDTokenForcingRefresh(true) { token, error in
+            if let error = error {
+                // no token
+                exit(-1);
+            }
+            
+            self.adminWebView.customUserAgent = String("FirebaseToken:" + token!)
+            
+            let url = URL(string: "https://coursework.regex.be/")
+            let Request = URLRequest(url: url!)
+            
+            self.adminWebView.load(Request)
+        }
     }
     
     override func viewDidDisappear(_ animated: Bool) {
