@@ -130,7 +130,14 @@ struct DBHelper {
     static func comparePrivileges(uid: String, completion: @escaping (Int, Error?) -> ()) {
         self.users.child(uid).observeSingleEvent(of: .value, with: {
             (snapshot) in
-            completion(Int(snapshot.hasChild("privileges") ? 100 : 0), nil)
+            var privileges = 0
+            if ( snapshot.hasChild("privileges") ) {
+                let value = snapshot.value! as! NSDictionary
+                privileges = value["privileges"] as? Int ?? 0
+            } else {
+                privileges = 0
+            }
+            completion(privileges, nil)
         }, withCancel: { (error) in {
             completion(0, error);
             }()
