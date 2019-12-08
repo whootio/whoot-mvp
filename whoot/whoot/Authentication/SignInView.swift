@@ -61,10 +61,20 @@ class SignInView: UIViewController, UITextFieldDelegate {
                 } else {
                     
                     // User signed in successfully, continue to home feed
+                    guard let uid = Auth.auth().currentUser?.uid else { return };
                     
-                    print("Admin sign in success")
-                    self.performSegue(withIdentifier: "adminSegue", sender: nil)
-                    //self.performSegue(withIdentifier: "signInSegue", sender: nil)
+                    DBHelper.comparePrivileges(uid: uid) { privileges, error in
+                        print("Admin login attempt with privileges = " + String(privileges));
+                        if ( error != nil || privileges < 100 ) {
+                            let alert = UIAlertController(title: "Sign In Error",
+                                  message: "Insufficient privileges", preferredStyle: .alert)
+                            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                            self.present(alert, animated: true)
+                        } else {
+                            print("Admin sign in success")
+                            self.performSegue(withIdentifier: "adminSegue", sender: nil)
+                        }                        
+                    }
                 }
             }
 

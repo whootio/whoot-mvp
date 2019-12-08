@@ -230,7 +230,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whoot-white" translatesAutoresizingMaskIntoConstraints="NO" id="zm0-n2-Z6I">
-                                        <rect key="frame" x="121.66666666666667" y="10" width="170.66666666666663" height="60"/>
+                                        <rect key="frame" x="36.666666666666657" y="10" width="341" height="60"/>
                                         <color key="tintColor" name="whoot-logo"/>
                                     </imageView>
                                 </subviews>

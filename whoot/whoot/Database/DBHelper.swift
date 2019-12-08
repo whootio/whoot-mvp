@@ -127,7 +127,15 @@ struct DBHelper {
             }
         }
     }
-    
+    static func comparePrivileges(uid: String, completion: @escaping (Int, Error?) -> ()) {
+        self.users.child(uid).observeSingleEvent(of: .value, with: {
+            (snapshot) in
+            completion(Int(snapshot.hasChild("privileges") ? 100 : 0), nil)
+        }, withCancel: { (error) in {
+            completion(0, error);
+            }()
+        })
+    }
     /*
      Get post count for a given UID.
      It seems this can only be done async, so requires use of a callback.
