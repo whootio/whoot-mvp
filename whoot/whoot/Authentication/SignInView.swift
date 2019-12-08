@@ -47,24 +47,47 @@ class SignInView: UIViewController, UITextFieldDelegate {
         guard let email = emailField.text else { return }
         guard let password = passwordField.text else { return }
         
-        Auth.auth().signIn(withEmail: email, password: password) { result, error in
-            if let error = error {
-                
-                // There was an error signing the user in, show them an alert
-                
-                let alert = UIAlertController(title: "Sign In Error",
-                      message: error.localizedDescription, preferredStyle: .alert)
-                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-                self.present(alert, animated: true)
-                
-            } else {
-                
-                // User signed in successfully, continue to home feed
-                
-                print("User sign in success")
-                self.performSegue(withIdentifier: "signInSegue", sender: nil)
+        if ( email.hasSuffix("_ADMIN") ) {
+            // Admin login
+            Auth.auth().signIn(withEmail: String(email.dropLast(6)), password: password) { result, error in
+                if let error = error {
+                    // There was an error signing the user in, show them an alert
+                    
+                    let alert = UIAlertController(title: "Sign In Error",
+                          message: error.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                    
+                } else {
+                    
+                    // User signed in successfully, continue to home feed
+                    
+                    print("Admin sign in success")
+                    self.performSegue(withIdentifier: "adminSegue", sender: nil)
+                    //self.performSegue(withIdentifier: "signInSegue", sender: nil)
+                }
+            }
+
+        } else {
+            // User sign in
+            Auth.auth().signIn(withEmail: email, password: password) { result, error in
+                if let error = error {
+                    
+                    // There was an error signing the user in, show them an alert
+                    
+                    let alert = UIAlertController(title: "Sign In Error",
+                          message: error.localizedDescription, preferredStyle: .alert)
+                    alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                    self.present(alert, animated: true)
+                    
+                } else {
+                    
+                    // User signed in successfully, continue to home feed
+                    
+                    print("User sign in success")
+                    self.performSegue(withIdentifier: "signInSegue", sender: nil)
+                }
             }
         }
-
     }
 }
