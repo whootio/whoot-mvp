@@ -73,10 +73,13 @@ class HomeViewController: UITableViewController {
     
     @objc func getPosts() {
         getAllPosts()
+        
     }
     
     func getAllPosts() {
-        DBHelper.getAllPosts { (userPosts, error) in
+        //print(loc.lon)
+        //print(loc.lat)
+        DBHelper.getAllPosts(lat: loc.lat, lon: loc.lon) { (userPosts, error) in
             if error != nil {
                 return
             }

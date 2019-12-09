@@ -110,6 +110,8 @@ class userPost{
         upVotes = dictionary["upvotes"] as! Int
         downVotes = dictionary["downvotes"] as! Int
         createdAt = dictionary["created_at"] as! String
+        lat = dictionary["lat"] as! Double
+        lon = dictionary["lon"] as! Double
         
     }
     
