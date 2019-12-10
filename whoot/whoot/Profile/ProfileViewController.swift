@@ -15,6 +15,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var joinedLabel: UILabel!
     @IBOutlet weak var lastSeenLabel: UILabel!
+    @IBOutlet weak var totalPosts: UILabel!
     @IBOutlet weak var totalPostsLabel: UILabel!
     @IBOutlet weak var upvotesLabel: UILabel!
     @IBOutlet weak var downvotesLabel: UILabel!
@@ -40,7 +41,15 @@ class ProfileViewController: UIViewController {
         
         lastSeenLabel.text = dateFormatter.string(from: currentUser.getAccessDate())
         
-        totalPostsLabel.text = String(currentUser.getPostCount())
+        currentUser.getPostCount() {postCount,error in
+            if error != nil {
+                self.totalPosts.isHidden = true;
+                self.totalPostsLabel.isHidden = true;
+            } else {
+                self.totalPostsLabel.text = String(postCount)
+
+            }
+        }
         
         upvotesLabel.text = String(currentUser.getUpVotes())
         

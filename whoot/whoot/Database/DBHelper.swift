@@ -18,8 +18,6 @@ struct DBHelper {
     static var users = db.child("users")
     static var posts = db.child("posts")
     
-    //let loc = locationHelper()
-    
     // MARK: Helper functions
     
     private static func getTimestampAsString() -> String {
@@ -105,17 +103,52 @@ struct DBHelper {
         }
     }
     
-    static func getPostCountByUID(uid: String) -> Int {
+    static func createComment(post: userPost, commentText: String, completion: @escaping (Error?, DatabaseReference?) -> ()) {
+        // We can assume that a user is already signed in
+        var p = posts.child(post.getUID())
+        var comment = p.child("comments").childByAutoId()
+        var commentClass = commentS(text: commentText)
+        // initialize the post information
+        commentClass.setTimestamp()
+        
+        // Grab the current user's information for associating it with the post
+        if let user = Auth.auth().currentUser {
+            commentClass.setUID(uid: user.uid)
+        }
+        
+        // Create mutable (modifiable) dictionary
+        let commentDict = commentClass.toDictionary()
+        
+        // Generate a UID for the post and insert it into the database
+        comment.setValue(commentDict) { (error, ref) in
+            if error != nil {
+                print("Create Post Error: \(String(describing: error?.localizedDescription))")
+                completion(error, ref)
+            }
+            else {
+                print("Create Post Success.")
+                completion(nil, ref)
+            }
+        }
+    }
+    
+    /*
+     Get post count for a given UID.
+     It seems this can only be done async, so requires use of a callback.
+     Returns Void.
+     */
+    static func getPostCountByUID(uid: String, completion: @escaping (Int, Error?) -> ()) {
+        self.posts.queryOrdered(byChild: "uid").queryEqual(toValue: uid).observeSingleEvent(of: .value, with: { (snapshot) in
+            completion(Int(snapshot.childrenCount), nil)
+        }, withCancel: { (error) in {
+            completion(-1, error);
+        }()})
+    }
+    
+    func getPostsByUID(uid: String) {
         // Query for posts using the user's UID
         // We assume that the Post object will have a fromDictionary() method that deserializes its data
         // Return an array of Post objects associated with the provided UID
-        
-        // This code is not yet functional.
-        var c : Int = -1
-        self.posts.observeSingleEvent(of: .value, with: { (snapshot) in
-            c = Int(snapshot.childrenCount)
-        })
-        return c
     }
    // -121.60995186244769
    // 36.67298620913742

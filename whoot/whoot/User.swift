@@ -50,7 +50,7 @@ class User{
         return Auth.auth().currentUser!.email ?? "none@example.org"
     }
     
-    func getPostCount() -> Int {
-        return DBHelper.getPostCountByUID(uid: self.UID)
+    func getPostCount(completion: @escaping (Int, Error?) -> ()) {
+        DBHelper.getPostCountByUID(uid: self.UID, completion: completion);
     }
 }
