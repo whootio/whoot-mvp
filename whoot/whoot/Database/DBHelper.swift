@@ -80,7 +80,7 @@ struct DBHelper {
         
         // initialize the post information
         post.setTimestamp()
-        post.setLocation()
+//        post.setLocation()
         // Grab the current user's information for associating it with the post
         if let user = Auth.auth().currentUser {
             post.setUID(uid: user.uid)
