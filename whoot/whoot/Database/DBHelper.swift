@@ -179,7 +179,7 @@ struct DBHelper {
             for child in snapshot.children {
                 if let childSnapshot = child as? DataSnapshot,
                 let data = childSnapshot.value as? [AnyHashable : Any] {
-                    let post = userPost(dictionary: data)
+                    let post = userPost(postUID: childSnapshot.key, dictionary: data)
                     
                     var de = CLLocation(latitude: post.lat, longitude: post.lon)
                     //var distanceMeters = 5
@@ -200,11 +200,10 @@ struct DBHelper {
     
     
     static func getAllComments(UID:String, completion: @escaping ([commentS], Error?) -> ()) {
-        var comments = posts.child(UID).child("comments") 
+        let comments = posts.child(UID).child("comments")
         
-        if comments == nil{
+        if comments == nil {
             return
-            
         }
            
            //CLLocationDistance meters = [te distanceFromLocation:te]
@@ -228,7 +227,72 @@ struct DBHelper {
                completion(commentsArray, error)
            }
        }
-       
+    
+    static func setUpvotes(postUID: String, upvoted: Bool, completion: @escaping (Bool, Error?) -> ()) {
+        let userUID = Auth.auth().currentUser?.uid
+        
+        let userUpvoteRef = users.child(userUID!).child("voted_posts").child(postUID)
+        userUpvoteRef.setValue(true) { (error, _) in
+            if let error = error {
+                assertionFailure(error.localizedDescription)
+                return completion(false, error)
+            }
+            
+            let postRef = posts.child(postUID)
+            postRef.runTransactionBlock({ (mutableData) -> TransactionResult in
+                let upvoteData = mutableData.childData(byAppendingPath: "upvotes")
+                let currentCount = upvoteData.value as? Int ?? 0
+
+                upvoteData.value = currentCount + 1
+
+                return TransactionResult.success(withValue: mutableData)
+            }, andCompletionBlock: { (error, _, _) in
+                if let error = error {
+                    assertionFailure(error.localizedDescription)
+                    completion(false, error)
+                } else {
+                    completion(true, error)
+                }
+            })
+        }
+    }
+        
+    static func setDownvotes(postUID: String, downvoted: Bool, completion: @escaping (Bool, Error?) -> ()) {
+        let userUID = Auth.auth().currentUser?.uid
+        
+        let userDownvoteRef = users.child(userUID!).child("voted_posts").child(postUID)
+        userDownvoteRef.setValue(false) { (error, _) in
+            if let error = error {
+                assertionFailure(error.localizedDescription)
+                return completion(false, error)
+            }
+            
+            let postRef = posts.child(postUID)
+            postRef.runTransactionBlock({ (mutableData) -> TransactionResult in
+                let downvoteData = mutableData.childData(byAppendingPath: "downvotes")
+                let currentCount = downvoteData.value as? Int ?? 0
+
+                downvoteData.value = currentCount + 1
+
+                return TransactionResult.success(withValue: mutableData)
+            }, andCompletionBlock: { (error, _, _) in
+                if let error = error {
+                    assertionFailure(error.localizedDescription)
+                    completion(false, error)
+                } else {
+                    completion(true, error)
+                }
+            })
+        }
+    }
+    
+    static func checkPostUpvoteState(postUID: String, completion: @escaping (Bool, Error?) -> ()) {
+//        if  let userUID = Auth.auth().currentUser?.uid,
+//            let postVotes = users.child(userUID).child("post_votes"),
+//            let isVoted = postVotes.child(postUID) {
+//            
+//        }
+    }
     
     func getPostsByLocation(lat: Double, lon: Double/*location: CLLocationCoordinate2D, radiusInMiles: Int*/) {
         // Check if the location is not null (ie: the user has location services on)

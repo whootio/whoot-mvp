@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="dark"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -86,7 +86,9 @@
                                 </tableViewCellContentView>
                                 <connections>
                                     <outlet property="bodyText" destination="63A-FK-94L" id="hRP-VN-mGH"/>
+                                    <outlet property="downvoteButton" destination="dTs-6M-mLI" id="83B-G5-B2u"/>
                                     <outlet property="timestamp" destination="2co-7O-vd6" id="4Ox-02-Zfw"/>
+                                    <outlet property="upvoteButton" destination="ZeY-ZN-GCz" id="ihc-Ah-msY"/>
                                     <outlet property="upvoteCount" destination="KDg-5f-mdD" id="KQl-El-7Lr"/>
                                 </connections>
                             </tableViewCell>
