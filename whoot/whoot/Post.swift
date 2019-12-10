@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import CoreLocation
 
 class userPost{
     private var text: String = ""
@@ -16,10 +17,18 @@ class userPost{
     private var downVotes: Int = 0
     private var createdAt: String = ""
     
-    init(text: String) {
+  
+    //var loc = locationHelper()
+    var lat: Double = 0
+    var lon: Double = 0
+    
+    init(text: String, llat: Double, llon: Double) {
         self.text = text
         self.downVotes = 0
         self.upVotes = 0
+        //var loc = locationHelper()
+        self.lat = llat
+        self.lon = llon
     }
     
     func addComment(p:commentS){
@@ -101,6 +110,8 @@ class userPost{
             "upvotes": upVotes,
             "downvotes": downVotes,
             "created_at": createdAt,
+            "lat":lat,
+            "lon":lon
         ]
         return dict
     }
@@ -112,6 +123,9 @@ class userPost{
         upVotes = dictionary["upvotes"] as! Int
         downVotes = dictionary["downvotes"] as! Int
         createdAt = dictionary["created_at"] as! String
+        lat = dictionary["lat"] as! Double
+        lon = dictionary["lon"] as! Double
+        
     }
     
 }

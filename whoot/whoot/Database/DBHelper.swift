@@ -8,6 +8,9 @@
 
 import Firebase
 import CoreLocation
+import UIKit
+import Foundation
+import MapKit
 
 struct DBHelper {
     
@@ -74,9 +77,10 @@ struct DBHelper {
     static func createPost(post: userPost, completion: @escaping (Error?, DatabaseReference?) -> ()) {
         // We can assume that a user is already signed in
         
+        
         // initialize the post information
         post.setTimestamp()
-        
+        post.setLocation()
         // Grab the current user's information for associating it with the post
         if let user = Auth.auth().currentUser {
             post.setUID(uid: user.uid)
@@ -146,8 +150,14 @@ struct DBHelper {
         // We assume that the Post object will have a fromDictionary() method that deserializes its data
         // Return an array of Post objects associated with the provided UID
     }
-    
-    static func getAllPosts(completion: @escaping ([userPost], Error?) -> ()) {
+   // -121.60995186244769
+   // 36.67298620913742
+    static func getAllPosts(lat: Double, lon: Double,completion: @escaping ([userPost], Error?) -> ()) {
+        let te = CLLocation(latitude: lat, longitude: lon)
+        
+        //CLLocationDistance meters = [te distanceFromLocation:te]
+        //var distanceMeters = te.distanceFromLocation(destination)
+        
         var postArray = [userPost]()
         
         posts.observeSingleEvent(of: .value, with: { (snapshot) in
@@ -155,7 +165,14 @@ struct DBHelper {
                 if let childSnapshot = child as? DataSnapshot,
                 let data = childSnapshot.value as? [AnyHashable : Any] {
                     let post = userPost(dictionary: data)
-                    postArray.insert(post, at: 0)
+                    
+                    var de = CLLocation(latitude: post.lat, longitude: post.lon)
+                    //var distanceMeters = 5
+                    var distanceMeters = te.distance(from: de)
+                    
+                    if(distanceMeters < 500){
+                        postArray.insert(post, at: 0)
+                    }
                 }
             }
             completion(postArray, nil)
@@ -164,12 +181,12 @@ struct DBHelper {
         }
     }
     
-    func getPostsByLocation(location: CLLocationCoordinate2D, radiusInMiles: Int) {
+    func getPostsByLocation(lat: Double, lon: Double/*location: CLLocationCoordinate2D, radiusInMiles: Int*/) {
         // Check if the location is not null (ie: the user has location services on)
         // If it's null, grab all posts (maybe)
         // If it's available use it to query for posts within a specified mile radius
         // Return a list of all posts within the provided location
-        
+
         
     }
 }
