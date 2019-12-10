@@ -33,6 +33,9 @@ class commentS{
         return self.UID
     }
     
+    init(dictionary: [AnyHashable : Any]) {
+          fromDictionary(dictionary: dictionary)
+      }
     
     func setPostText(text: String) {
         self.text = text

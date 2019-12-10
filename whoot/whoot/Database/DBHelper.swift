@@ -196,6 +196,40 @@ struct DBHelper {
         }
     }
     
+    
+    
+    
+    static func getAllComments(UID:String, completion: @escaping ([commentS], Error?) -> ()) {
+        var comments = posts.child(UID).child("comments") 
+        
+        if comments == nil{
+            return
+            
+        }
+           
+           //CLLocationDistance meters = [te distanceFromLocation:te]
+           //var distanceMeters = te.distanceFromLocation(destination)
+           
+           var commentsArray = [commentS]()
+           
+           comments.observeSingleEvent(of: .value, with: { (snapshot) in
+               for child in snapshot.children {
+                   if let childSnapshot = child as? DataSnapshot,
+                   let data = childSnapshot.value as? [AnyHashable : Any] {
+                       let comment = commentS(dictionary: data)
+                       
+                    commentsArray.append(comment)
+                       
+                       
+                   }
+               }
+               completion(commentsArray, nil)
+           }) { (error) in
+               completion(commentsArray, error)
+           }
+       }
+       
+    
     func getPostsByLocation(lat: Double, lon: Double/*location: CLLocationCoordinate2D, radiusInMiles: Int*/) {
         // Check if the location is not null (ie: the user has location services on)
         // If it's null, grab all posts (maybe)
