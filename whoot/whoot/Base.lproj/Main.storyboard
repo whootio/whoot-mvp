@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="ZBo-Px-xZG">
-    <device id="retina5_9" orientation="portrait" appearance="dark"/>
+    <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
@@ -13,11 +13,11 @@
             <objects>
                 <viewController storyboardIdentifier="SignInView" definesPresentationContext="YES" modalPresentationStyle="fullScreen" useStoryboardIdentifierAsRestorationIdentifier="YES" id="BYZ-38-t0r" userLabel="Sign In View" customClass="SignInView" customModule="Whoot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="A2Y-J4-EI0">
-                                <rect key="frame" x="30" y="346" width="315" height="40"/>
+                                <rect key="frame" x="30" y="308" width="354" height="40"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="e54-kc-Rsz"/>
@@ -32,7 +32,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="xjF-Pz-NVi">
-                                <rect key="frame" x="30" y="406" width="315" height="40"/>
+                                <rect key="frame" x="30" y="368" width="354" height="40"/>
                                 <color key="backgroundColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="gJS-gJ-0Cu"/>
@@ -44,7 +44,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLe-er-zQk">
-                                <rect key="frame" x="30" y="466" width="315" height="40"/>
+                                <rect key="frame" x="30" y="428" width="354" height="40"/>
                                 <color key="backgroundColor" name="whoot-button"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="sOb-kX-Z6b"/>
@@ -57,7 +57,7 @@
                                 </connections>
                             </button>
                             <stackView opaque="NO" contentMode="scaleToFill" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="14J-O6-d5X" userLabel="Sign Up">
-                                <rect key="frame" x="67.333333333333329" y="718" width="240.33333333333337" height="30"/>
+                                <rect key="frame" x="87.000000000000014" y="676" width="240.33333333333337" height="30"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account? " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="66W-mP-nEk">
                                         <rect key="frame" x="0.0" y="5" width="183.33333333333334" height="20.333333333333332"/>
@@ -78,7 +78,7 @@
                                 </subviews>
                             </stackView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whoot-white" translatesAutoresizingMaskIntoConstraints="NO" id="ea2-a0-X07">
-                                <rect key="frame" x="107.66666666666669" y="136" width="160" height="160"/>
+                                <rect key="frame" x="127" y="98" width="160" height="160"/>
                                 <color key="tintColor" name="whoot-logo"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="160" id="QNA-Kg-KlD">
@@ -144,22 +144,59 @@
                         <outlet property="passwordField" destination="xjF-Pz-NVi" id="bgO-xO-gN5"/>
                         <outlet property="signInButton" destination="bLe-er-zQk" id="cwZ-5L-bKV"/>
                         <segue destination="ZBo-Px-xZG" kind="showDetail" identifier="signInSegue" id="ikC-EO-hdZ"/>
+                        <segue destination="sQW-HA-Zgn" kind="showDetail" identifier="adminSegue" id="y8q-zF-Hv2"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1152" y="2688"/>
         </scene>
+        <!--Admin View-->
+        <scene sceneID="RpK-jh-tct">
+            <objects>
+                <viewController id="sQW-HA-Zgn" customClass="AdminView" customModule="Whoot" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" clipsSubviews="YES" contentMode="scaleToFill" id="lrP-Lo-BW2">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <wkWebView contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tq-Pb-MQs">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <edgeInsets key="layoutMargins" top="0.0" left="0.0" bottom="0.0" right="0.0"/>
+                                <wkWebViewConfiguration key="configuration">
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <wkPreferences key="preferences" javaScriptCanOpenWindowsAutomatically="YES"/>
+                                </wkWebViewConfiguration>
+                            </wkWebView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="7tq-Pb-MQs" firstAttribute="top" secondItem="xxP-o7-ErH" secondAttribute="top" id="5Ev-82-sbr"/>
+                            <constraint firstItem="7tq-Pb-MQs" firstAttribute="leading" secondItem="xxP-o7-ErH" secondAttribute="leading" id="88Z-3g-orN"/>
+                            <constraint firstAttribute="bottom" secondItem="7tq-Pb-MQs" secondAttribute="bottom" id="9do-Iy-0j3"/>
+                            <constraint firstItem="7tq-Pb-MQs" firstAttribute="trailing" secondItem="xxP-o7-ErH" secondAttribute="trailing" id="dNA-F7-GcR"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="xxP-o7-ErH"/>
+                    </view>
+                    <connections>
+                        <outlet property="adminWebView" destination="7tq-Pb-MQs" id="xnL-7j-pyd"/>
+                        <segue destination="ZBo-Px-xZG" kind="showDetail" identifier="signInSegue" id="KhA-Ie-hmp"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ysC-Ab-rgk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-172" y="2386.6995073891626"/>
+        </scene>
         <!--Sign Up View-->
         <scene sceneID="JTN-dh-bKt">
             <objects>
                 <viewController id="a1S-T1-r0r" userLabel="Sign Up View" customClass="SignUpView" customModule="Whoot" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5T8-f7-BS2">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="716"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vKd-M8-D5H">
-                                <rect key="frame" x="30" y="322" width="315" height="34"/>
+                                <rect key="frame" x="30" y="301" width="354" height="34"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="emailAddress" returnKeyType="next" textContentType="email"/>
@@ -168,7 +205,7 @@
                                 </connections>
                             </textField>
                             <textField opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="New Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="ZlI-CG-X1j">
-                                <rect key="frame" x="30" y="376" width="315" height="34"/>
+                                <rect key="frame" x="30" y="355" width="354" height="34"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="done" secureTextEntry="YES" textContentType="new-password"/>
@@ -177,7 +214,7 @@
                                 </connections>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E56-yr-134">
-                                <rect key="frame" x="30" y="430" width="315" height="40"/>
+                                <rect key="frame" x="30" y="409" width="354" height="40"/>
                                 <color key="backgroundColor" name="whoot-button"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="gsK-PA-t6e"/>
@@ -190,10 +227,10 @@
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Cy3-MB-c72">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="80"/>
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="80"/>
                                 <subviews>
                                     <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="whoot-white" translatesAutoresizingMaskIntoConstraints="NO" id="zm0-n2-Z6I">
-                                        <rect key="frame" x="102.33333333333333" y="10" width="170.66666666666669" height="60"/>
+                                        <rect key="frame" x="36.666666666666657" y="10" width="341" height="60"/>
                                         <color key="tintColor" name="whoot-logo"/>
                                     </imageView>
                                 </subviews>
@@ -206,13 +243,13 @@
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sign Up" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YWQ-9f-gce">
-                                <rect key="frame" x="30" y="130" width="315" height="51"/>
+                                <rect key="frame" x="30" y="130" width="354" height="51"/>
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="42"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Share your thoughts anonymously with your local community. Join Whoot today." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lcJ-xB-Cwg">
-                                <rect key="frame" x="30" y="191" width="315" height="40.666666666666657"/>
+                                <rect key="frame" x="30" y="191" width="354" height="40.666666666666657"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="lightTextColor"/>
                                 <nil key="highlightedColor"/>
@@ -366,7 +403,7 @@
         </namedColor>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ikC-EO-hdZ"/>
+        <segue reference="KhA-Ie-hmp"/>
     </inferredMetricsTieBreakers>
     <color key="tintColor" name="whoot"/>
 </document>
