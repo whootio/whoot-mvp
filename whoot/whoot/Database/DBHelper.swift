@@ -153,7 +153,7 @@ struct DBHelper {
      Returns Void.
      */
     static func getPostCountByUID(uid: String, completion: @escaping (Int, Error?) -> ()) {
-        self.posts.queryOrdered(byChild: "uid").queryEqual(toValue: uid).observeSingleEvent(of: .value, with: { (snapshot) in
+        self.posts.queryOrdered(byChild: "user_uid").queryEqual(toValue: uid).observeSingleEvent(of: .value, with: { (snapshot) in
             completion(Int(snapshot.childrenCount), nil)
         }, withCancel: { (error) in {
             completion(-1, error);
