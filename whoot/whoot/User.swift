@@ -16,9 +16,19 @@ class User{
     var downVotes: Int = 0
     var Posts = [userPost]()
     var PostCount = 0
+    var privileges = 0
     
     init(userID: String) {
         self.UID = userID
+    }
+    
+    init(userID: String, privileges: Int) {
+        self.UID = userID
+        self.privileges = privileges
+    }
+    
+    func setPrivileges(p: Int) {
+        self.privileges = p;
     }
     
     func getUID() -> String{
@@ -52,5 +62,9 @@ class User{
     
     func getPostCount(completion: @escaping (Int, Error?) -> ()) {
         DBHelper.getPostCountByUID(uid: self.UID, completion: completion);
+    }
+    
+    func getPrivileges() -> Int{
+        return self.privileges;
     }
 }

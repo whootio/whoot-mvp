@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		04810739238389F00009E8EC /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04810738238389F00009E8EC /* ProfileViewController.swift */; };
+		04FDFE86239AE3F500F56DCD /* AdminView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 04FDFE85239AE3F500F56DCD /* AdminView.swift */; };
 		07054E3B236D16CC00C988CB /* SignInView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07054E3A236D16CC00C988CB /* SignInView.swift */; };
 		07054E3D236D16D800C988CB /* SignUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07054E3C236D16D800C988CB /* SignUpView.swift */; };
 		0744F6572395CC9C005444F9 /* DateTimeAgo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0744F6562395CC9C005444F9 /* DateTimeAgo.swift */; };
@@ -56,6 +57,7 @@
 
 /* Begin PBXFileReference section */
 		04810738238389F00009E8EC /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		04FDFE85239AE3F500F56DCD /* AdminView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminView.swift; sourceTree = "<group>"; };
 		07054E3A236D16CC00C988CB /* SignInView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignInView.swift; sourceTree = "<group>"; };
 		07054E3C236D16D800C988CB /* SignUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpView.swift; sourceTree = "<group>"; };
 		0744F6562395CC9C005444F9 /* DateTimeAgo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateTimeAgo.swift; sourceTree = "<group>"; };
@@ -134,6 +136,14 @@
 			path = Profile;
 			sourceTree = "<group>";
 		};
+		04FDFE7E239AE35F00F56DCD /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				04FDFE85239AE3F500F56DCD /* AdminView.swift */,
+			);
+			path = Admin;
+			sourceTree = "<group>";
+		};
 		07054E39236D169C00C988CB /* Authentication */ = {
 			isa = PBXGroup;
 			children = (
@@ -176,6 +186,7 @@
 		07964C65236A726300C5A3AC /* whoot */ = {
 			isa = PBXGroup;
 			children = (
+				04FDFE7E239AE35F00F56DCD /* Admin */,
 				0744F6552395CC83005444F9 /* Helpers */,
 				7F38BE6A23947C130079B8C4 /* LocationHelper.swift */,
 				04810737238389320009E8EC /* Profile */,
@@ -507,6 +518,7 @@
 				07A616762395C2D2002A9A2E /* SettingsViewController.swift in Sources */,
 				079981F72371FB4C006DE754 /* DBHelper.swift in Sources */,
 				A9E78F72238638020030E8D4 /* Comment.swift in Sources */,
+				04FDFE86239AE3F500F56DCD /* AdminView.swift in Sources */,
 				A9CB026023712333001F2AC6 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -12,6 +12,7 @@ class NewPostViewController: UIViewController {
 
     @IBOutlet weak var postBodyText: UITextView!
     
+    var loc = locationHelper()
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -24,8 +25,10 @@ class NewPostViewController: UIViewController {
     
     @IBAction func createNewPost(_ sender: Any) {
         let body = postBodyText.text
-        let post = userPost(text: body!)
-        
+       
+        let lat: Double = loc.lon
+        let lon: Double = loc.lat
+        let post = userPost(text: body!,llat: lat,llon: lon)
         // right now posts consist of only body text
         // we can add location, media, etc. later
         
