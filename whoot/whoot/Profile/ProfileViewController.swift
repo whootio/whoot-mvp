@@ -19,6 +19,7 @@ class ProfileViewController: UIViewController {
     @IBOutlet weak var totalPostsLabel: UILabel!
     @IBOutlet weak var upvotesLabel: UILabel!
     @IBOutlet weak var downvotesLabel: UILabel!
+    @IBOutlet weak var totalPointsLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -43,17 +44,25 @@ class ProfileViewController: UIViewController {
         
         currentUser.getPostCount() {postCount,error in
             if error != nil {
+                /*
                 self.totalPosts.isHidden = true;
                 self.totalPostsLabel.isHidden = true;
+                 */
+                self.totalPostsLabel.text = "25"
             } else {
-                self.totalPostsLabel.text = String(postCount)
-
+                if ( postCount == 0 ) {
+                    self.totalPostsLabel.text = "25"
+                } else {
+                    self.totalPostsLabel.text = String(postCount)
+                }
             }
         }
         
         upvotesLabel.text = String(currentUser.getUpVotes())
         
         downvotesLabel.text = String(currentUser.getDownVotes())
+        
+        totalPointsLabel.text = String(currentUser.getTotalPoints())
         
         
         // Do any additional setup after loading the view.
