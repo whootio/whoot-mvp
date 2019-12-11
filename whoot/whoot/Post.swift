@@ -12,6 +12,7 @@ import CoreLocation
 class userPost{
     private var text: String = ""
     private var UID: String = ""
+    private var userUID: String = ""
     private var comment = [commentS]()
     private var upVotes: Int = 0
     private var downVotes: Int = 0
@@ -35,8 +36,8 @@ class userPost{
         self.comment.append(p)
     }
     
-    init(dictionary: [AnyHashable : Any]) {
-        fromDictionary(dictionary: dictionary)
+    init(postUID: String, dictionary: [AnyHashable : Any]) {
+        fromDictionary(postUID: postUID, dictionary: dictionary)
     }
     
     func setUID(uid: String) {
@@ -46,6 +47,15 @@ class userPost{
     
     func getUID() -> String {
         return self.UID
+    }
+    
+    func setUserUID(userUID: String) {
+        self.userUID = userUID
+    }
+    
+    
+    func getUserUID() -> String {
+        return self.userUID
     }
     
     
@@ -116,8 +126,9 @@ class userPost{
         return dict
     }
     
-    func fromDictionary(dictionary: [AnyHashable :Any]) {
-        UID = dictionary["user_uid"] as! String
+    func fromDictionary(postUID: String, dictionary: [AnyHashable :Any]) {
+        UID = postUID
+        userUID = dictionary["user_uid"] as! String
         text = dictionary["body"] as! String
         upVotes = dictionary["upvotes"] as! Int
         downVotes = dictionary["downvotes"] as! Int

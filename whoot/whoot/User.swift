@@ -12,13 +12,23 @@ import FirebaseDatabase
 
 class User{
     var UID: String = ""
-    var upVotes: Int = 0
-    var downVotes: Int = 0
+    var upVotes: Int = 140
+    var downVotes: Int = 20
     var Posts = [userPost]()
     var PostCount = 0
+    var privileges = 0
     
     init(userID: String) {
         self.UID = userID
+    }
+    
+    init(userID: String, privileges: Int) {
+        self.UID = userID
+        self.privileges = privileges
+    }
+    
+    func setPrivileges(p: Int) {
+        self.privileges = p;
     }
     
     func getUID() -> String{
@@ -52,5 +62,13 @@ class User{
     
     func getPostCount(completion: @escaping (Int, Error?) -> ()) {
         DBHelper.getPostCountByUID(uid: self.UID, completion: completion);
+    }
+    
+    func getTotalPoints() -> Int{
+        return 120
+    }
+    
+    func getPrivileges() -> Int{
+        return self.privileges;
     }
 }

@@ -49,7 +49,7 @@ class SettingsViewController: UITableViewController {
     // MARK: - Table view data source
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if indexPath.section == 2 && indexPath.row == 0 {
+        if indexPath.section == 3 && indexPath.row == 0 {
             signOut(self)
             self.tableView.deselectRow(at: indexPath, animated: true)
     }

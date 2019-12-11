@@ -1,40 +1,49 @@
 //
-//  NewPostViewController.swift
+//  NewComment.swift
 //  whoot
 //
-//  Created by Carlos Estrada on 11/13/19.
+//  Created by idamarire okumagba on 12/9/19.
 //  Copyright © 2019 Carlos Estrada. All rights reserved.
 //
 
+
+
 import UIKit
 
-class NewPostViewController: UIViewController {
 
-    @IBOutlet weak var postBodyText: UITextView!
-    var tableView = HomeViewController()
-    var loc = locationHelper()
+
+
+class NewCommentViewController: UIViewController {
+
+    var post: userPost = userPost(text: "String",llat: 0,llon: 0)
+    var tableView = PostDetailViewController()
+    
+    @IBOutlet weak var texview: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        postBodyText.placeholder = "What's on your mind?"
 
+        texview.placeholder = "Add a comment..."
+        
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func cancelNewPost(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+    @IBAction func cancel(_ sender: Any) {
+    dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func createNewPost(_ sender: Any) {
-        let body = postBodyText.text
+    
+    @IBAction func createPost(_ sender: Any) {
+    
+    
+        let body = texview.text
        
-        let lat: Double = loc.lon
-        let lon: Double = loc.lat
-        let post = userPost(text: body!,llat: lat,llon: lon)
+       
+        let comment = commentS(text: body!)
         // right now posts consist of only body text
         // we can add location, media, etc. later
         
-        DBHelper.createPost(post: post) { (error, ref) in
+        DBHelper.createComment(post: post.getUID(), comment: comment)
+        { (error, ref) in
             if let error = error {
                 let alert = UIAlertController(title: "Post Error",
                       message: String(describing: error.localizedDescription), preferredStyle: .alert)
@@ -43,7 +52,7 @@ class NewPostViewController: UIViewController {
             }
             else {
                 self.dismiss(animated: true) {
-                    self.tableView.getPosts()
+                    self.tableView.getComments()
                 }
             }
         }
@@ -68,3 +77,4 @@ class NewPostViewController: UIViewController {
     
 
 }
+

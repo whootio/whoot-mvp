@@ -103,11 +103,13 @@ struct DBHelper {
         }
     }
     
-    static func createComment(post: userPost, commentText: String, completion: @escaping (Error?, DatabaseReference?) -> ()) {
+    static func createComment(post: String, comment: commentS, completion: @escaping (Error?, DatabaseReference?) -> ()) {
         // We can assume that a user is already signed in
-        var p = posts.child(post.getUID())
-        var comment = p.child("comments").childByAutoId()
-        var commentClass = commentS(text: commentText)
+       
+       // print(post)
+        var p = posts.child(post)
+        var c = p.child("comments").childByAutoId()
+        var commentClass = commentS(text: comment.getPostText())
         // initialize the post information
         commentClass.setTimestamp()
         
@@ -120,7 +122,7 @@ struct DBHelper {
         let commentDict = commentClass.toDictionary()
         
         // Generate a UID for the post and insert it into the database
-        comment.setValue(commentDict) { (error, ref) in
+        c.setValue(commentDict) { (error, ref) in
             if error != nil {
                 print("Create Post Error: \(String(describing: error?.localizedDescription))")
                 completion(error, ref)
@@ -131,14 +133,29 @@ struct DBHelper {
             }
         }
     }
-    
+    static func comparePrivileges(uid: String, completion: @escaping (Int, Error?) -> ()) {
+        self.users.child(uid).observeSingleEvent(of: .value, with: {
+            (snapshot) in
+            var privileges = 0
+            if ( snapshot.hasChild("privileges") ) {
+                let value = snapshot.value! as! NSDictionary
+                privileges = value["privileges"] as? Int ?? 0
+            } else {
+                privileges = 0
+            }
+            completion(privileges, nil)
+        }, withCancel: { (error) in {
+            completion(0, error);
+            }()
+        })
+    }
     /*
      Get post count for a given UID.
      It seems this can only be done async, so requires use of a callback.
      Returns Void.
      */
     static func getPostCountByUID(uid: String, completion: @escaping (Int, Error?) -> ()) {
-        self.posts.queryOrdered(byChild: "uid").queryEqual(toValue: uid).observeSingleEvent(of: .value, with: { (snapshot) in
+        self.posts.queryOrdered(byChild: "user_uid").queryEqual(toValue: uid).observeSingleEvent(of: .value, with: { (snapshot) in
             completion(Int(snapshot.childrenCount), nil)
         }, withCancel: { (error) in {
             completion(-1, error);
@@ -164,7 +181,7 @@ struct DBHelper {
             for child in snapshot.children {
                 if let childSnapshot = child as? DataSnapshot,
                 let data = childSnapshot.value as? [AnyHashable : Any] {
-                    let post = userPost(dictionary: data)
+                    let post = userPost(postUID: childSnapshot.key, dictionary: data)
                     
                     var de = CLLocation(latitude: post.lat, longitude: post.lon)
                     //var distanceMeters = 5
@@ -180,6 +197,106 @@ struct DBHelper {
             completion(postArray, nil)
         }) { (error) in
             completion(postArray, error)
+        }
+    }
+    
+    
+    
+    
+    static func getAllComments(UID:String, completion: @escaping ([commentS], Error?) -> ()) {
+        var comments = posts.child(UID).child("comments")
+        
+        if comments == nil {
+            return
+        }
+           
+           //CLLocationDistance meters = [te distanceFromLocation:te]
+           //var distanceMeters = te.distanceFromLocation(destination)
+           
+           var commentsArray = [commentS]()
+           
+           comments.observeSingleEvent(of: .value, with: { (snapshot) in
+               for child in snapshot.children {
+                   if let childSnapshot = child as? DataSnapshot,
+                   let data = childSnapshot.value as? [AnyHashable : Any] {
+                       let comment = commentS(dictionary: data)
+                       
+                    commentsArray.append(comment)
+                       
+                       
+                   }
+               }
+               completion(commentsArray, nil)
+           }) { (error) in
+               completion(commentsArray, error)
+           }
+       }
+    
+    static func setUpvotes(postUID: String, prevVal: Int, completion: @escaping (Int, Error?) -> ()) {
+        let userUID = Auth.auth().currentUser?.uid
+        
+        let userUpvoteRef = users.child(userUID!).child("voted_posts").child(postUID)
+        userUpvoteRef.setValue(prevVal == 1 ? 0 : 1) { (error, _) in
+            if let error = error {
+                assertionFailure(error.localizedDescription)
+                return completion(0, error)
+            }
+            
+            let postRef = posts.child(postUID)
+            postRef.runTransactionBlock({ (mutableData) -> TransactionResult in
+                let upvoteData = mutableData.childData(byAppendingPath: "upvotes")
+                let currentCount = upvoteData.value as? Int ?? 0
+
+                upvoteData.value = prevVal == 1 ? currentCount - 1 : currentCount + 1
+
+                return TransactionResult.success(withValue: mutableData)
+            }, andCompletionBlock: { (error, _, _) in
+                if let error = error {
+                    assertionFailure(error.localizedDescription)
+                    completion(0, error)
+                } else {
+                    completion((prevVal == 1 ? 0 : 1), error)
+                }
+            })
+        }
+    }
+        
+    static func setDownvotes(postUID: String, prevVal: Int, completion: @escaping (Int, Error?) -> ()) {
+        let userUID = Auth.auth().currentUser?.uid
+        
+        let userDownvoteRef = users.child(userUID!).child("voted_posts").child(postUID)
+        userDownvoteRef.setValue(prevVal == -1 ? 0 : -1) { (error, _) in
+            if let error = error {
+                assertionFailure(error.localizedDescription)
+                return completion(0, error)
+            }
+            
+            let postRef = posts.child(postUID)
+            postRef.runTransactionBlock({ (mutableData) -> TransactionResult in
+                let downvoteData = mutableData.childData(byAppendingPath: "downvotes")
+                let currentCount = downvoteData.value as? Int ?? 0
+
+                downvoteData.value = prevVal == -1 ? currentCount - 1 : currentCount + 1
+
+                return TransactionResult.success(withValue: mutableData)
+            }, andCompletionBlock: { (error, _, _) in
+                if let error = error {
+                    assertionFailure(error.localizedDescription)
+                    completion(0, error)
+                } else {
+                    completion((prevVal == -1 ? 0 : -1), error)
+                }
+            })
+        }
+    }
+    
+    static func checkPostVoteState(postUID: String, completion: @escaping (Int?, Error?) -> ()) {
+        let userUID = Auth.auth().currentUser?.uid
+        let postVotes = users.child(userUID!).child("voted_posts").child(postUID)
+        postVotes.observe(.value) { (data) in
+            if let value = data.value as? Int {
+                completion(value, nil)
+            }
         }
     }
     

@@ -33,6 +33,9 @@ class commentS{
         return self.UID
     }
     
+    init(dictionary: [AnyHashable : Any]) {
+          fromDictionary(dictionary: dictionary)
+      }
     
     func setPostText(text: String) {
         self.text = text
@@ -71,6 +74,13 @@ class commentS{
     
     func getTimestamp() -> String {
         return createdAt
+    }
+    
+    func getTimeAgo() -> String {
+        let formatter = DateFormatter()
+        formatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+        let date = formatter.date(from: self.createdAt)!
+        return date.timeAgo()
     }
     
     
