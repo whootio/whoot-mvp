@@ -105,7 +105,7 @@ class userPost{
         
         var dict = [AnyHashable : Any]()
         dict = [
-            "uid": UID,
+            "user_uid": UID,
             "body": text,
             "upvotes": upVotes,
             "downvotes": downVotes,
@@ -117,15 +117,13 @@ class userPost{
     }
     
     func fromDictionary(dictionary: [AnyHashable :Any]) {
-        
-        UID = dictionary["uid"] as! String
+        UID = dictionary["user_uid"] as! String
         text = dictionary["body"] as! String
         upVotes = dictionary["upvotes"] as! Int
         downVotes = dictionary["downvotes"] as! Int
         createdAt = dictionary["created_at"] as! String
         lat = dictionary["lat"] as! Double
         lon = dictionary["lon"] as! Double
-        
     }
     
 }

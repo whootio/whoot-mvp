@@ -80,7 +80,7 @@ struct DBHelper {
         
         // initialize the post information
         post.setTimestamp()
-        post.setLocation()
+        //post.setLocation()
         // Grab the current user's information for associating it with the post
         if let user = Auth.auth().currentUser {
             post.setUID(uid: user.uid)
@@ -169,8 +169,10 @@ struct DBHelper {
                     var de = CLLocation(latitude: post.lat, longitude: post.lon)
                     //var distanceMeters = 5
                     var distanceMeters = te.distance(from: de)
+                    var range = CLLocationDistance(17000)
                     
-                    if(distanceMeters < 500){
+                    //print(distanceMeters)
+                    if(distanceMeters < range){
                         postArray.insert(post, at: 0)
                     }
                 }
