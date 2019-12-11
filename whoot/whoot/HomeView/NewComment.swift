@@ -16,16 +16,14 @@ import UIKit
 class NewCommentViewController: UIViewController {
 
     var post: userPost = userPost(text: "String",llat: 0,llon: 0)
-    
-    
-    @IBOutlet var commentPage: UITableView!
-    
-    
+    var tableView = PostDetailViewController()
     
     @IBOutlet weak var texview: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        texview.placeholder = "Add a comment..."
+        
         // Do any additional setup after loading the view.
     }
     
@@ -53,11 +51,9 @@ class NewCommentViewController: UIViewController {
                 self.present(alert, animated: true)
             }
             else {
-                self.dismiss(animated: true, completion: nil)
-                // test comments DELETE AFTERWARDS. BREAKS DB.
-//                DBHelper.createComment(post: post, commentText: "testing comments") { (error, ref) in
-//
-//                }
+                self.dismiss(animated: true) {
+                    self.tableView.getComments()
+                }
             }
         }
         

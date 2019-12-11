@@ -11,10 +11,12 @@ import UIKit
 class NewPostViewController: UIViewController {
 
     @IBOutlet weak var postBodyText: UITextView!
-    
+    var tableView = HomeViewController()
     var loc = locationHelper()
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        postBodyText.placeholder = "What's on your mind?"
 
         // Do any additional setup after loading the view.
     }
@@ -40,11 +42,9 @@ class NewPostViewController: UIViewController {
                 self.present(alert, animated: true)
             }
             else {
-                self.dismiss(animated: true, completion: nil)
-                // test comments DELETE AFTERWARDS. BREAKS DB.
-//                DBHelper.createComment(post: post, commentText: "testing comments") { (error, ref) in
-//
-//                }
+                self.dismiss(animated: true) {
+                    self.tableView.getPosts()
+                }
             }
         }
         

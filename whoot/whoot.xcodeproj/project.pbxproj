@@ -29,6 +29,8 @@
 		07DC17452374947D0079652C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07DC17432374947D0079652C /* Main.storyboard */; };
 		07DC1748237496280079652C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07DC1746237496280079652C /* LaunchScreen.storyboard */; };
 		07DC174B2374982A0079652C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07DC17492374982A0079652C /* Profile.storyboard */; };
+		07FEB5BE23A15EFC0090275E /* PostDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FEB5BD23A15EFC0090275E /* PostDetailViewController.swift */; };
+		07FEB5C023A1767D0090275E /* TextViewPlaceholder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07FEB5BF23A1767D0090275E /* TextViewPlaceholder.swift */; };
 		0A60A18A0DCEF639985C4487 /* Pods_whootUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89A95B4053003D19B95FB8AB /* Pods_whootUITests.framework */; };
 		68AD6938239F516C00E1951D /* NewComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AD6937239F516C00E1951D /* NewComment.swift */; };
 		7E6CA89C69FD1A34A9F37E05 /* Pods_whootTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64EF0292CB10F38594313F7D /* Pods_whootTests.framework */; };
@@ -85,6 +87,8 @@
 		07DC17442374947D0079652C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = whoot/Base.lproj/Main.storyboard; sourceTree = SOURCE_ROOT; };
 		07DC1747237496280079652C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = whoot/Base.lproj/LaunchScreen.storyboard; sourceTree = SOURCE_ROOT; };
 		07DC174A2374982A0079652C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = whoot/Base.lproj/Profile.storyboard; sourceTree = SOURCE_ROOT; };
+		07FEB5BD23A15EFC0090275E /* PostDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostDetailViewController.swift; sourceTree = "<group>"; };
+		07FEB5BF23A1767D0090275E /* TextViewPlaceholder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextViewPlaceholder.swift; sourceTree = "<group>"; };
 		1E9F70B353B1548E0F50E03B /* Pods_whoot.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_whoot.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		309AC7571184B0A16AA9BD22 /* Pods-whoot.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whoot.debug.xcconfig"; path = "Target Support Files/Pods-whoot/Pods-whoot.debug.xcconfig"; sourceTree = "<group>"; };
 		3C8B11D6BBF7664D0EAC52F8 /* Pods-whootUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whootUITests.release.xcconfig"; path = "Target Support Files/Pods-whootUITests/Pods-whootUITests.release.xcconfig"; sourceTree = "<group>"; };
@@ -159,6 +163,7 @@
 			isa = PBXGroup;
 			children = (
 				0744F6562395CC9C005444F9 /* DateTimeAgo.swift */,
+				07FEB5BF23A1767D0090275E /* TextViewPlaceholder.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -237,9 +242,10 @@
 		07D8DDBD236EA81C0099E7F8 /* HomeView */ = {
 			isa = PBXGroup;
 			children = (
-				074DA8E7237CBF32004E1FD7 /* NewPostViewController.swift */,
 				07D8DDC8236F63E80099E7F8 /* HomeViewController.swift */,
+				074DA8E7237CBF32004E1FD7 /* NewPostViewController.swift */,
 				074DA8E9237CD04A004E1FD7 /* PostTableViewCell.swift */,
+				07FEB5BD23A15EFC0090275E /* PostDetailViewController.swift */,
 				68AD6937239F516C00E1951D /* NewComment.swift */,
 			);
 			path = HomeView;
@@ -509,12 +515,14 @@
 			files = (
 				7F38BE6B23947C130079B8C4 /* LocationHelper.swift in Sources */,
 				07D8DDC9236F63E80099E7F8 /* HomeViewController.swift in Sources */,
+				07FEB5BE23A15EFC0090275E /* PostDetailViewController.swift in Sources */,
 				07964C67236A726300C5A3AC /* AppDelegate.swift in Sources */,
 				07964C69236A726300C5A3AC /* SceneDelegate.swift in Sources */,
 				A9CB025E2371231E001F2AC6 /* Post.swift in Sources */,
 				07054E3B236D16CC00C988CB /* SignInView.swift in Sources */,
 				074DA8E8237CBF32004E1FD7 /* NewPostViewController.swift in Sources */,
 				04810739238389F00009E8EC /* ProfileViewController.swift in Sources */,
+				07FEB5C023A1767D0090275E /* TextViewPlaceholder.swift in Sources */,
 				07054E3D236D16D800C988CB /* SignUpView.swift in Sources */,
 				074DA8EA237CD04A004E1FD7 /* PostTableViewCell.swift in Sources */,
 				0744F6572395CC9C005444F9 /* DateTimeAgo.swift in Sources */,
