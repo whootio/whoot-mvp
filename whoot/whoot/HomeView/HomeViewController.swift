@@ -115,9 +115,12 @@ class HomeViewController: UITableViewController {
         cell.bodyText.text = post.getPostText()
         cell.timestamp.text = "\(post.getTimeAgo())"
         cell.upvoteCount.text = "\(post.getPoints())"
+        cell.upvoteCountInt = post.getPoints()
         cell.postUID = post.getUID()
-//        cell.setUpvoteState(state: DBHelper.checkPostUpvoteState())
-//        cell.setDownvoteState(state: DBHelper.checkPostDownvoteState())
+        
+        DBHelper.checkPostVoteState(postUID: post.getUID()) { (state, error) in
+            cell.setVoteState(state: state!)
+        }
 
         return cell
     }

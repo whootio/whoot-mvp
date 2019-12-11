@@ -228,14 +228,14 @@ struct DBHelper {
            }
        }
     
-    static func setUpvotes(postUID: String, upvoted: Bool, completion: @escaping (Bool, Error?) -> ()) {
+    static func setUpvotes(postUID: String, prevVal: Int, completion: @escaping (Int, Error?) -> ()) {
         let userUID = Auth.auth().currentUser?.uid
         
         let userUpvoteRef = users.child(userUID!).child("voted_posts").child(postUID)
-        userUpvoteRef.setValue(true) { (error, _) in
+        userUpvoteRef.setValue(prevVal == 1 ? 0 : 1) { (error, _) in
             if let error = error {
                 assertionFailure(error.localizedDescription)
-                return completion(false, error)
+                return completion(0, error)
             }
             
             let postRef = posts.child(postUID)
@@ -243,28 +243,28 @@ struct DBHelper {
                 let upvoteData = mutableData.childData(byAppendingPath: "upvotes")
                 let currentCount = upvoteData.value as? Int ?? 0
 
-                upvoteData.value = currentCount + 1
+                upvoteData.value = prevVal == 1 ? currentCount - 1 : currentCount + 1
 
                 return TransactionResult.success(withValue: mutableData)
             }, andCompletionBlock: { (error, _, _) in
                 if let error = error {
                     assertionFailure(error.localizedDescription)
-                    completion(false, error)
+                    completion(0, error)
                 } else {
-                    completion(true, error)
+                    completion((prevVal == 1 ? 0 : 1), error)
                 }
             })
         }
     }
         
-    static func setDownvotes(postUID: String, downvoted: Bool, completion: @escaping (Bool, Error?) -> ()) {
+    static func setDownvotes(postUID: String, prevVal: Int, completion: @escaping (Int, Error?) -> ()) {
         let userUID = Auth.auth().currentUser?.uid
         
         let userDownvoteRef = users.child(userUID!).child("voted_posts").child(postUID)
-        userDownvoteRef.setValue(false) { (error, _) in
+        userDownvoteRef.setValue(prevVal == -1 ? 0 : -1) { (error, _) in
             if let error = error {
                 assertionFailure(error.localizedDescription)
-                return completion(false, error)
+                return completion(0, error)
             }
             
             let postRef = posts.child(postUID)
@@ -272,26 +272,28 @@ struct DBHelper {
                 let downvoteData = mutableData.childData(byAppendingPath: "downvotes")
                 let currentCount = downvoteData.value as? Int ?? 0
 
-                downvoteData.value = currentCount + 1
+                downvoteData.value = prevVal == -1 ? currentCount - 1 : currentCount + 1
 
                 return TransactionResult.success(withValue: mutableData)
             }, andCompletionBlock: { (error, _, _) in
                 if let error = error {
                     assertionFailure(error.localizedDescription)
-                    completion(false, error)
+                    completion(0, error)
                 } else {
-                    completion(true, error)
+                    completion((prevVal == -1 ? 0 : -1), error)
                 }
             })
         }
     }
     
-    static func checkPostUpvoteState(postUID: String, completion: @escaping (Bool, Error?) -> ()) {
-//        if  let userUID = Auth.auth().currentUser?.uid,
-//            let postVotes = users.child(userUID).child("post_votes"),
-//            let isVoted = postVotes.child(postUID) {
-//            
-//        }
+    static func checkPostVoteState(postUID: String, completion: @escaping (Int?, Error?) -> ()) {
+        let userUID = Auth.auth().currentUser?.uid
+        let postVotes = users.child(userUID!).child("voted_posts").child(postUID)
+        postVotes.observe(.value) { (data) in
+            if let value = data.value as? Int {
+                completion(value, nil)
+            }
+        }
     }
     
     func getPostsByLocation(lat: Double, lon: Double/*location: CLLocationCoordinate2D, radiusInMiles: Int*/) {
