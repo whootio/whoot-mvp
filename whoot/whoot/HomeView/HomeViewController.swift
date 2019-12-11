@@ -31,6 +31,9 @@ class HomeViewController: UITableViewController {
         //var a = loc.lon
         print(loc.lon)
         print(loc.lat)
+        
+        tableView.estimatedRowHeight = 100
+        tableView.rowHeight = 200// UITableView.automaticDimension
 
         getPosts()
        
@@ -110,6 +113,8 @@ class HomeViewController: UITableViewController {
         let cell : PostTableViewCell = tableView.dequeueReusableCell(withIdentifier: "PostTableViewCell", for: indexPath) as! PostTableViewCell
         
         let post = posts[indexPath.row]
+        
+        print(post)
 
         // Configure the cell...
         cell.bodyText.text = post.getPostText()

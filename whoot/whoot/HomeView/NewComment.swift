@@ -1,38 +1,49 @@
 //
-//  NewPostViewController.swift
+//  NewComment.swift
 //  whoot
 //
-//  Created by Carlos Estrada on 11/13/19.
+//  Created by idamarire okumagba on 12/9/19.
 //  Copyright © 2019 Carlos Estrada. All rights reserved.
 //
 
+
+
 import UIKit
 
-class NewPostViewController: UIViewController {
 
-    @IBOutlet weak var postBodyText: UITextView!
+
+
+class NewCommentViewController: UITableViewController {
+
     
-    var loc = locationHelper()
+    @IBOutlet var commentPage: UITableView!
+    
+    
+    
+    @IBOutlet weak var texview: UITextView!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
     
-    @IBAction func cancelNewPost(_ sender: Any) {
-        dismiss(animated: true, completion: nil)
+    @IBAction func cancel(_ sender: Any) {
+    dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func createNewPost(_ sender: Any) {
-        let body = postBodyText.text
+    
+    @IBAction func createPost(_ sender: Any) {
+    
+    
+        let body = texview.text
        
-        let lat: Double = loc.lon
-        let lon: Double = loc.lat
-        let post = userPost(text: body!,llat: lat,llon: lon)
+       
+        let post = commentS(text: body!)
         // right now posts consist of only body text
         // we can add location, media, etc. later
         
-        DBHelper.createPost(post: post) { (error, ref) in
+        DBHelper.createComment(post: post)
+        { (error, ref) in
             if let error = error {
                 let alert = UIAlertController(title: "Post Error",
                       message: String(describing: error.localizedDescription), preferredStyle: .alert)
@@ -68,3 +79,4 @@ class NewPostViewController: UIViewController {
     
 
 }
+

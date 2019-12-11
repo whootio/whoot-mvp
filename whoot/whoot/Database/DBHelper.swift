@@ -103,11 +103,11 @@ struct DBHelper {
         }
     }
     
-    static func createComment(post: userPost, commentText: String, completion: @escaping (Error?, DatabaseReference?) -> ()) {
+    static func createComment(post: commentS, completion: @escaping (Error?, DatabaseReference?) -> ()) {
         // We can assume that a user is already signed in
         var p = posts.child(post.getUID())
         var comment = p.child("comments").childByAutoId()
-        var commentClass = commentS(text: commentText)
+        var commentClass = commentS(text: post.getPostText())
         // initialize the post information
         commentClass.setTimestamp()
         
@@ -200,7 +200,7 @@ struct DBHelper {
     
     
     static func getAllComments(UID:String, completion: @escaping ([commentS], Error?) -> ()) {
-        let comments = posts.child(UID).child("comments")
+        var comments = posts.child(UID).child("comments")
         
         if comments == nil {
             return

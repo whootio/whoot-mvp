@@ -30,6 +30,7 @@
 		07DC1748237496280079652C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07DC1746237496280079652C /* LaunchScreen.storyboard */; };
 		07DC174B2374982A0079652C /* Profile.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07DC17492374982A0079652C /* Profile.storyboard */; };
 		0A60A18A0DCEF639985C4487 /* Pods_whootUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89A95B4053003D19B95FB8AB /* Pods_whootUITests.framework */; };
+		68AD6938239F516C00E1951D /* NewComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68AD6937239F516C00E1951D /* NewComment.swift */; };
 		7E6CA89C69FD1A34A9F37E05 /* Pods_whootTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 64EF0292CB10F38594313F7D /* Pods_whootTests.framework */; };
 		7F38BE6B23947C130079B8C4 /* LocationHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F38BE6A23947C130079B8C4 /* LocationHelper.swift */; };
 		A9CB025E2371231E001F2AC6 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = A9CB025D2371231D001F2AC6 /* Post.swift */; };
@@ -90,6 +91,7 @@
 		439323856DA37DE0A6B1F036 /* Pods-whootTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whootTests.release.xcconfig"; path = "Target Support Files/Pods-whootTests/Pods-whootTests.release.xcconfig"; sourceTree = "<group>"; };
 		53E82D95237E75FD877782CF /* Pods-whootTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-whootTests.debug.xcconfig"; path = "Target Support Files/Pods-whootTests/Pods-whootTests.debug.xcconfig"; sourceTree = "<group>"; };
 		64EF0292CB10F38594313F7D /* Pods_whootTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_whootTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		68AD6937239F516C00E1951D /* NewComment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewComment.swift; sourceTree = "<group>"; };
 		7F38BE6A23947C130079B8C4 /* LocationHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationHelper.swift; sourceTree = "<group>"; };
 		89A95B4053003D19B95FB8AB /* Pods_whootUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_whootUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A9CB025D2371231D001F2AC6 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
@@ -238,6 +240,7 @@
 				074DA8E7237CBF32004E1FD7 /* NewPostViewController.swift */,
 				07D8DDC8236F63E80099E7F8 /* HomeViewController.swift */,
 				074DA8E9237CD04A004E1FD7 /* PostTableViewCell.swift */,
+				68AD6937239F516C00E1951D /* NewComment.swift */,
 			);
 			path = HomeView;
 			sourceTree = "<group>";
@@ -518,6 +521,7 @@
 				07A616762395C2D2002A9A2E /* SettingsViewController.swift in Sources */,
 				079981F72371FB4C006DE754 /* DBHelper.swift in Sources */,
 				A9E78F72238638020030E8D4 /* Comment.swift in Sources */,
+				68AD6938239F516C00E1951D /* NewComment.swift in Sources */,
 				04FDFE86239AE3F500F56DCD /* AdminView.swift in Sources */,
 				A9CB026023712333001F2AC6 /* User.swift in Sources */,
 			);
