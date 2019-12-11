@@ -91,7 +91,7 @@
                                     <outlet property="timestamp" destination="2co-7O-vd6" id="4Ox-02-Zfw"/>
                                     <outlet property="upvoteButton" destination="ZeY-ZN-GCz" id="ihc-Ah-msY"/>
                                     <outlet property="upvoteCount" destination="KDg-5f-mdD" id="KQl-El-7Lr"/>
-                                    <segue destination="py0-BY-zu5" kind="show" id="flW-0e-JaO"/>
+                                    <segue destination="6uu-su-k0H" kind="show" id="s7T-F4-wSJ"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -111,69 +111,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iya-rn-mm0" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1942.0289855072465" y="1830.8035714285713"/>
-        </scene>
-        <!--New Comment View Controller-->
-        <scene sceneID="Lep-7x-E2z">
-            <objects>
-                <tableViewController id="py0-BY-zu5" customClass="NewCommentViewController" customModule="Whoot" customModuleProvider="target" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="S0H-bm-Lhf">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <textView key="tableFooterView" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Comment" textAlignment="natural" id="imG-Pc-oLI">
-                            <rect key="frame" x="0.0" y="127" width="414" height="137"/>
-                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                            <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                        </textView>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="71" id="eWE-qQ-FHP">
-                                <rect key="frame" x="0.0" y="28" width="414" height="71"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="eWE-qQ-FHP" id="PCG-dw-bcA">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="71"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                    <subviews>
-                                        <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="R1b-Z2-l2p">
-                                            <rect key="frame" x="0.0" y="13" width="414" height="44"/>
-                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
-                                            <items>
-                                                <navigationItem title="Comments" id="s3B-y8-idT">
-                                                    <barButtonItem key="leftBarButtonItem" title="Cancel" id="JW1-0P-FMv">
-                                                        <color key="tintColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <connections>
-                                                            <action selector="cancel:" destination="py0-BY-zu5" id="sAl-HL-ZgU"/>
-                                                        </connections>
-                                                    </barButtonItem>
-                                                    <barButtonItem key="rightBarButtonItem" title="Post" id="VI4-9w-dcn">
-                                                        <color key="tintColor" name="Whoot"/>
-                                                        <connections>
-                                                            <action selector="createPost:" destination="py0-BY-zu5" id="j1Z-rJ-gqo"/>
-                                                        </connections>
-                                                    </barButtonItem>
-                                                </navigationItem>
-                                            </items>
-                                        </navigationBar>
-                                    </subviews>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="py0-BY-zu5" id="sjp-WU-OHZ"/>
-                            <outlet property="delegate" destination="py0-BY-zu5" id="bBm-90-tbj"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" id="d2F-ZN-HdT"/>
-                    <connections>
-                        <outlet property="commentPage" destination="S0H-bm-Lhf" id="3kC-II-9Bx"/>
-                        <outlet property="texview" destination="imG-Pc-oLI" id="Dfg-Aj-cx7"/>
-                    </connections>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="7K1-Gy-i6g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1940.5797101449277" y="2554.6875"/>
         </scene>
         <!--New Post View Controller-->
         <scene sceneID="dC9-2L-LwS">
@@ -233,6 +170,42 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="leQ-fx-hvX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2750.7246376811595" y="1830.8035714285713"/>
+        </scene>
+        <!--New Comment View Controller-->
+        <scene sceneID="RG3-VS-3pk">
+            <objects>
+                <viewController id="6uu-su-k0H" userLabel="New Comment View Controller" customClass="NewCommentViewController" customModule="Whoot" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="9n7-ld-bNR">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Comment.." textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="HQh-Sh-fgu">
+                                <rect key="frame" x="0.0" y="88" width="414" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="Eeq-vZ-wLy"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="Bb9-z9-nr5">
+                        <barButtonItem key="rightBarButtonItem" title="Post" id="kTm-BV-QPQ">
+                            <color key="tintColor" name="Whoot"/>
+                            <connections>
+                                <action selector="createPost:" destination="6uu-su-k0H" id="zYG-Xk-mPt"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="texview" destination="HQh-Sh-fgu" id="sAf-kS-bbo"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Kyb-eT-KMH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1940.5797101449277" y="2515.8482142857142"/>
         </scene>
         <!--Home Navigation-->
         <scene sceneID="dSs-Vm-IcF">

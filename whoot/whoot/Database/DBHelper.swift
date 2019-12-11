@@ -103,11 +103,13 @@ struct DBHelper {
         }
     }
     
-    static func createComment(post: commentS, completion: @escaping (Error?, DatabaseReference?) -> ()) {
+    static func createComment(post: String, comment: commentS, completion: @escaping (Error?, DatabaseReference?) -> ()) {
         // We can assume that a user is already signed in
-        var p = posts.child(post.getUID())
-        var comment = p.child("comments").childByAutoId()
-        var commentClass = commentS(text: post.getPostText())
+       
+       // print(post)
+        var p = posts.child(post)
+        var c = p.child("comments").childByAutoId()
+        var commentClass = commentS(text: comment.getPostText())
         // initialize the post information
         commentClass.setTimestamp()
         
@@ -120,7 +122,7 @@ struct DBHelper {
         let commentDict = commentClass.toDictionary()
         
         // Generate a UID for the post and insert it into the database
-        comment.setValue(commentDict) { (error, ref) in
+        c.setValue(commentDict) { (error, ref) in
             if error != nil {
                 print("Create Post Error: \(String(describing: error?.localizedDescription))")
                 completion(error, ref)

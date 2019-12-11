@@ -13,8 +13,10 @@ import UIKit
 
 
 
-class NewCommentViewController: UITableViewController {
+class NewCommentViewController: UIViewController {
 
+    var post: userPost = userPost(text: "String",llat: 0,llon: 0)
+    
     
     @IBOutlet var commentPage: UITableView!
     
@@ -38,11 +40,11 @@ class NewCommentViewController: UITableViewController {
         let body = texview.text
        
        
-        let post = commentS(text: body!)
+        let comment = commentS(text: body!)
         // right now posts consist of only body text
         // we can add location, media, etc. later
         
-        DBHelper.createComment(post: post)
+        DBHelper.createComment(post: post.getUID(), comment: comment)
         { (error, ref) in
             if let error = error {
                 let alert = UIAlertController(title: "Post Error",

@@ -21,6 +21,10 @@ class PostTableViewCell: UITableViewCell {
     var isDownvoted: Bool = false
     var upvoteCountInt: Int = 0
     
+    
+
+    
+    
     var postUID: String = ""
     
     override func awakeFromNib() {

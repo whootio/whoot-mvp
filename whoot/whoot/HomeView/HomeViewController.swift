@@ -40,7 +40,14 @@ class HomeViewController: UITableViewController {
         
     }
     
-
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)!
+        let post = posts[indexPath.row]
+        let detailViewController = segue.destination as! NewCommentViewController
+        detailViewController.post = post
+        tableView.deselectRow(at: indexPath, animated: true)
+    }
     
     // MARK: - Sign Out
     @IBAction func signOut() {
