@@ -22,8 +22,8 @@ class HomeViewController: UITableViewController {
         self.tableView.rowHeight = UITableView.automaticDimension
         self.tableView.estimatedRowHeight = 200
         
-        checkIfUserSignedIn()
-        getPosts()
+        let check = checkIfUserSignedIn()
+        if check { getPosts() }
        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -60,12 +60,12 @@ class HomeViewController: UITableViewController {
         }
     }
     
-    func checkIfUserSignedIn() {
+    func checkIfUserSignedIn() -> Bool {
         if Auth.auth().currentUser != nil {
                     
             // User is signed in.
             print("\nUser already signed in \(String(describing: Auth.auth().currentUser?.uid))\n")
-            
+            return true
                     
         } else {
             
@@ -74,7 +74,7 @@ class HomeViewController: UITableViewController {
             let mainStoryboard:UIStoryboard = UIStoryboard(name: "Main", bundle: nil)
             let signIn = mainStoryboard.instantiateViewController(withIdentifier: "SignInView") as! SignInView
             self.present(signIn, animated: true, completion: nil)
-
+            return false
         }
     }
     
