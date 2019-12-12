@@ -127,7 +127,6 @@ class userPost{
     }
     
     func fromDictionary(postUID: String, dictionary: [AnyHashable :Any]) {
-        
         UID = postUID
         userUID = dictionary["user_uid"] as! String
         text = dictionary["body"] as! String
@@ -136,7 +135,6 @@ class userPost{
         createdAt = dictionary["created_at"] as! String
         lat = dictionary["lat"] as! Double
         lon = dictionary["lon"] as! Double
-        
     }
     
 }
