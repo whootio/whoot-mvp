@@ -24,6 +24,11 @@ class AdminView : UIViewController {
                 // no token
                 exit(-1);
             }
+
+            /* Clear cache via: https://stackoverflow.com/a/34376943 */            
+            let websiteDataTypes = NSSet(array: [WKWebsiteDataTypeDiskCache, WKWebsiteDataTypeMemoryCache])
+            let date = Date(timeIntervalSince1970: 0)
+            WKWebsiteDataStore.default().removeData(ofTypes: websiteDataTypes as! Set<String>, modifiedSince: date, completionHandler:{ })
             
             self.adminWebView.customUserAgent = String("FirebaseToken:" + token!)
             
