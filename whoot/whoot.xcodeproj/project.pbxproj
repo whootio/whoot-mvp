@@ -162,8 +162,10 @@
 		0744F6552395CC83005444F9 /* Helpers */ = {
 			isa = PBXGroup;
 			children = (
+				079981F62371FB4C006DE754 /* DBHelper.swift */,
 				0744F6562395CC9C005444F9 /* DateTimeAgo.swift */,
 				07FEB5BF23A1767D0090275E /* TextViewPlaceholder.swift */,
+				7F38BE6A23947C130079B8C4 /* LocationHelper.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -193,17 +195,13 @@
 		07964C65236A726300C5A3AC /* whoot */ = {
 			isa = PBXGroup;
 			children = (
-				04FDFE7E239AE35F00F56DCD /* Admin */,
 				0744F6552395CC83005444F9 /* Helpers */,
-				7F38BE6A23947C130079B8C4 /* LocationHelper.swift */,
+				07F0C0DD23A3132D009363DF /* Models */,
+				07054E39236D169C00C988CB /* Authentication */,
+				04FDFE7E239AE35F00F56DCD /* Admin */,
+				07D8DDBD236EA81C0099E7F8 /* Home */,
 				04810737238389320009E8EC /* Profile */,
 				07DC171E23748F380079652C /* Storyboards */,
-				079981F52371FB14006DE754 /* Database */,
-				07054E39236D169C00C988CB /* Authentication */,
-				07D8DDBD236EA81C0099E7F8 /* HomeView */,
-				A9CB025F23712333001F2AC6 /* User.swift */,
-				A9CB025D2371231D001F2AC6 /* Post.swift */,
-				A9E78F71238638020030E8D4 /* Comment.swift */,
 				07964C66236A726300C5A3AC /* AppDelegate.swift */,
 				07964C68236A726300C5A3AC /* SceneDelegate.swift */,
 				07964C6F236A726600C5A3AC /* Assets.xcassets */,
@@ -231,15 +229,7 @@
 			path = whootUITests;
 			sourceTree = "<group>";
 		};
-		079981F52371FB14006DE754 /* Database */ = {
-			isa = PBXGroup;
-			children = (
-				079981F62371FB4C006DE754 /* DBHelper.swift */,
-			);
-			path = Database;
-			sourceTree = "<group>";
-		};
-		07D8DDBD236EA81C0099E7F8 /* HomeView */ = {
+		07D8DDBD236EA81C0099E7F8 /* Home */ = {
 			isa = PBXGroup;
 			children = (
 				07D8DDC8236F63E80099E7F8 /* HomeViewController.swift */,
@@ -248,7 +238,7 @@
 				07FEB5BD23A15EFC0090275E /* PostDetailViewController.swift */,
 				68AD6937239F516C00E1951D /* NewComment.swift */,
 			);
-			path = HomeView;
+			path = Home;
 			sourceTree = "<group>";
 		};
 		07DC171E23748F380079652C /* Storyboards */ = {
@@ -275,6 +265,16 @@
 				3C8B11D6BBF7664D0EAC52F8 /* Pods-whootUITests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		07F0C0DD23A3132D009363DF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				A9CB025F23712333001F2AC6 /* User.swift */,
+				A9CB025D2371231D001F2AC6 /* Post.swift */,
+				A9E78F71238638020030E8D4 /* Comment.swift */,
+			);
+			path = Models;
 			sourceTree = "<group>";
 		};
 		13AAD0AE6DAC6EA4EB4BA89A /* Frameworks */ = {
